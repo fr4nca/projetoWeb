@@ -1,16 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
+import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { IndexComponent } from './components/index/index.component';
+import { CriarItiComponent } from './components/criar-iti/criar-iti.component';
 
+const appRoutes: Routes = [
+  { path: 'criar', component: CriarItiComponent },
+  { path: '', component: IndexComponent },
+]
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    IndexComponent,
+    CriarItiComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
