@@ -4,6 +4,7 @@ import { User } from '../../models/User'
 import { Local } from '../../models/Locall'
 import { Atividade } from '../../models/Atividade'
 import { Dica } from '../../models/Dica';
+import { ItinerarioService } from '../../services/itinerario.service';
 
 
 @Component({
@@ -12,7 +13,6 @@ import { Dica } from '../../models/Dica';
   styleUrls: ['./criar-iti.component.css']
 })
 export class CriarItiComponent implements OnInit {
-
 
   aConteudo
   aHora
@@ -24,48 +24,60 @@ export class CriarItiComponent implements OnInit {
   uEmail: string
   iNome: string
   iDescricao: string
-  
-  dicas: Dica[]
-  atividade: Atividade
-  dica: Dica
-  usuario: User = { nome: 'Victor', email: "alecrim@asdasd" }
-  local: Local = { pais: "Brasil", cidade: "Brasília", estado: "DF" }
-  atividades: Atividade[] = [
-    {
-      conteudo: "Lanchar",
-      hora: "23:15",
-      dicas: [{
-        conteudo: "Alecrim",
-        usuario: this.usuario
-      }]
-    }, {
-      conteudo: "Dormir",
-      hora: "22:00",
-      dicas: [{
-        conteudo: "Alecrim",
-        usuario: this.usuario
-      }]
-    }
-  ]
 
-  iti: Itinerario = {
-    atividades: this.atividades,
-    local: this.local,
-    usuario: this.usuario,
-    descricao: this.iDescricao,
-    nome: this.iNome
-  }
-  
-  constructor() { }
+  iti: Itinerario
+  atividades: Atividade[] = []
+  atividade: Atividade
+  dicas: Dica[] = []
+  dica: Dica
+  usuario: User
+  local: Local
+
+  itinerarios: Itinerario[] = this.itinerarioService.getItinerarios()
+
+  constructor(private itinerarioService: ItinerarioService) { }
 
   ngOnInit() {
+  }
+
+  addItinerario() {
+    this.local = {
+      pais: this.lPais,
+      cidade: this.lCidade,
+      estado: this.lEstado
+    }
+    this.usuario = {
+      nome: this.uNome,
+      email: this.uEmail
+    }
+    this.iti = {
+      atividades: this.atividades,
+      local: this.local,
+      usuario: this.usuario,
+      descricao: this.iDescricao,
+      nome: this.iNome
+    }
+    this.itinerarioService.addItinerario(this.iti)
+    this.atividades = []
+    this.dicas = []
+    this.aConteudo = ''
+    this.aHora = ''
+    this.dConteudo = ''
+    this.lPais = ''
+    this.lCidade = ''
+    this.lEstado = ''
+    this.uNome = ''
+    this.uEmail = ''
+    this.iDescricao = ''
+    this.iNome = ''
   }
 
   setIti(ati) {
     this.atividade = ati
   }
-  selecionado(ati){
-    if(this.atividade == ati){
+
+  selecionado(ati) {
+    if (this.atividade == ati) {
       return 'green'
     } else {
       return 'white'
@@ -76,8 +88,6 @@ export class CriarItiComponent implements OnInit {
     this.atividade = { conteudo: this.aConteudo, hora: this.aHora, dicas: [] }
     this.atividades.push(this.atividade);
   }
-
-
 
   addDicas() {
     this.dica = { conteudo: this.dConteudo, usuario: this.usuario }

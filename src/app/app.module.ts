@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { IndexComponent } from './components/index/index.component';
 import { CriarItiComponent } from './components/criar-iti/criar-iti.component';
+import { ItinerarioService } from './services/itinerario.service';
 
 const appRoutes: Routes = [
   { path: 'criar', component: CriarItiComponent },
@@ -25,7 +26,7 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [ItinerarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

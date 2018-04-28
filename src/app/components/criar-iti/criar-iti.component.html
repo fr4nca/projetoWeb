@@ -97,18 +97,17 @@
             </div>
         </div>
         <div class="col-md-4">
-            <div>
+            <div class="card card-body">
                 <ul>
-                    <li [ngStyle]="{'background-color': selecionado(ativ)}" (click)="setIti(ativ)" *ngFor="let ativ of this.iti.atividades">{{ativ.conteudo}}
+                    <li [ngStyle]="{'background-color': selecionado(ativ)}" (click)="setIti(ativ)" *ngFor="let ativ of this.atividades">{{ativ.conteudo}}
                         <ul>
                             <li *ngFor="let dica of ativ.dicas">{{dica.conteudo}}</li>
                         </ul>
                     </li>
                 </ul>
             </div>
-            <button class="btn btn-primary btn-dark mt-4">Concluir</button>
-            <button class="btn btn-primary btn-dark mt-4">Cancelar</button>
-
+            <button (click)="addItinerario()" class="btn btn-primary btn-dark mt-4">Concluir</button>
+            <button routerLink="/" class="btn btn-primary btn-dark mt-4">Cancelar</button>
         </div>
     </div>
 </div>
