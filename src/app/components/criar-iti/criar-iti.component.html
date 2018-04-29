@@ -97,9 +97,9 @@
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card card-body">
-                <ul>
-                    <li [ngStyle]="{'background-color': selecionado(ativ)}" (click)="setIti(ativ)" *ngFor="let ativ of this.atividades">{{ativ.conteudo}}
+            <div>
+                <ul class="list-group">
+                    <li class="list-group-item" [ngStyle]="{'background-color': selecionado(ativ)}" (click)="setIti(ativ)" *ngFor="let ativ of this.atividades">{{ativ.conteudo}}
                         <ul>
                             <li *ngFor="let dica of ativ.dicas">{{dica.conteudo}}</li>
                         </ul>
