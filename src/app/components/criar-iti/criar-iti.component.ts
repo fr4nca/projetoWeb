@@ -79,7 +79,7 @@ export class CriarItiComponent implements OnInit {
 
   selecionado(ati) {
     if (this.atividade == ati) {
-      return 'green'
+      return 'lightgrey'
     } else {
       return 'white'
     }
