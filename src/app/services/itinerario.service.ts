@@ -16,5 +16,4 @@ export class ItinerarioService {
   getItinerarios(){
     return this.itinerarios
   }
-
 }

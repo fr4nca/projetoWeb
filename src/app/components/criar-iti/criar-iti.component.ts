@@ -12,6 +12,7 @@ import { ItinerarioService } from '../../services/itinerario.service';
   templateUrl: './criar-iti.component.html',
   styleUrls: ['./criar-iti.component.css']
 })
+
 export class CriarItiComponent implements OnInit {
 
   aConteudo
@@ -78,7 +79,7 @@ export class CriarItiComponent implements OnInit {
 
   selecionado(ati) {
     if (this.atividade == ati) {
-      return 'green'
+      return 'lightgrey'
     } else {
       return 'white'
     }
