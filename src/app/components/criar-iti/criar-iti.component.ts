@@ -33,13 +33,15 @@ export class CriarItiComponent implements OnInit {
   dica: Dica
   usuario: User
   local: Local
+  itinerarioss: Itinerario[]
 
   constructor(private itinerarioService: ItinerarioService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
+
 
   addItinerario() {
+
     this.local = {
       pais: this.lPais,
       cidade: this.lCidade,
