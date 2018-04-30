@@ -16,10 +16,10 @@
                             <input [(ngModel)]="uEmail" class=" form-control form-control-sm" type="text" name="email" id="email">
                         </small>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="foto">Foto:</label>
                         <input type="file" class="form-control form-control-sm">
-                    </div>
+                    </div> -->
                 </form>
             </div>
             <div>
@@ -50,10 +50,10 @@
                                 </select>
                             </small>
                         </div>
-                        <div class="form-group col-12">
+                        <!-- <div class="form-group col-12">
                             <label for="foto">Foto:</label>
                             <input type="file" class="form-control form-control-sm">
-                        </div>
+                        </div> -->
                     </div>
                 </form>
             </div>
@@ -100,9 +100,8 @@
             <div class="card card-body">
                 <ul class="list-group">
                     <h4 class="list-group">Atividades</h4>
-                    <li class="list-group-item" [ngStyle]="{'background-color': selecionado(ativ)}" 
-                    (click)="setIti(ativ)" *ngFor="let ativ of this.atividades">
-                    {{ativ.conteudo}}
+                    <li class="list-group-item" [ngStyle]="{'background-color': selecionado(ativ)}" (click)="setIti(ativ)" *ngFor="let ativ of this.atividades">
+                        {{ativ.conteudo}}
                         <ul>
                             <li class="list-group-item" *ngFor="let dica of ativ.dicas">{{dica.conteudo}}</li>
                         </ul>

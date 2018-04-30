@@ -1,5 +1,5 @@
 import { Atividade } from './Atividade';
-import { Local } from './Locall';
+import { Local } from './Local';
 import { User } from './User';
 
 export interface Itinerario {

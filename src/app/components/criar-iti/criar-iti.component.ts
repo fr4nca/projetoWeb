@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Itinerario } from '../../models/Itinerario'
 import { User } from '../../models/User'
-import { Local } from '../../models/Locall'
+import { Local } from '../../models/Local'
 import { Atividade } from '../../models/Atividade'
 import { Dica } from '../../models/Dica';
 import { ItinerarioService } from '../../services/itinerario.service';
@@ -34,8 +34,6 @@ export class CriarItiComponent implements OnInit {
   usuario: User
   local: Local
 
-  itinerarios: Itinerario[] = this.itinerarioService.getItinerarios()
-
   constructor(private itinerarioService: ItinerarioService) { }
 
   ngOnInit() {
@@ -47,10 +45,12 @@ export class CriarItiComponent implements OnInit {
       cidade: this.lCidade,
       estado: this.lEstado
     }
+
     this.usuario = {
       nome: this.uNome,
       email: this.uEmail
     }
+
     this.iti = {
       atividades: this.atividades,
       local: this.local,
@@ -58,19 +58,20 @@ export class CriarItiComponent implements OnInit {
       descricao: this.iDescricao,
       nome: this.iNome
     }
+
     this.itinerarioService.addItinerario(this.iti)
     this.atividades = []
     this.dicas = []
-    this.aConteudo = ''
-    this.aHora = ''
-    this.dConteudo = ''
-    this.lPais = ''
-    this.lCidade = ''
-    this.lEstado = ''
-    this.uNome = ''
-    this.uEmail = ''
-    this.iDescricao = ''
-    this.iNome = ''
+    this.aConteudo = undefined
+    this.aHora = undefined
+    this.dConteudo = undefined
+    this.lPais = undefined
+    this.lCidade = undefined
+    this.lEstado = undefined
+    this.uNome = undefined
+    this.uEmail = undefined
+    this.iDescricao = undefined
+    this.iNome = undefined
   }
 
   setIti(ati) {
