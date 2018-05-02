@@ -28,28 +28,23 @@
                     <div class="form-row">
                         <div class="form-group col-12">
                             <label for="pais">Pais: </label>
-                            <small>
-                                <select [(ngModel)]="lPais" class=" form-control form-control-sm" type="text" name="pais" id="pais">
-                                    <option *ngFor="let pais of paises">{{pais}}</option>
+                            <select [(ngModel)]="lPais" class=" form-control form-control-sm" type="text" name="pais" id="pais">
+                                <option>Brasil</option>
+                            </select>
+                        </div>
 
-                                </select> {{lPais}}
-                            </small>
+                        <div class="form-group col-4">
+                            <label for="email">Estado: </label>
+                            <select [(ngModel)]="lEstado" class=" form-control form-control-sm" type="text" name="estado" id="estado">
+                                <option *ngFor="let estado of locais">{{estado.sigla}}</option>
+                            </select>
                         </div>
                         <div class="form-group col-8">
                             <label for="cidade">Cidade:</label>
-                            <select [(ngModel)]="lCidade" class=" form-control form-control-sm" type="text" name="cidade" id="cidade">
-
-                                <option *ngFor="let cidade of cidades" [value]="cidade">{{cidade}}</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-4">
-                            <label for="email">Estado: </label>
-                            <small>
-                                <select [(ngModel)]="lEstado" class=" form-control form-control-sm" type="text" name="estado" id="estado">
-                                    <option *ngFor="let estado of estados" [value]="estado">{{estado}}</option>
-                                </select>
-                            </small>
-                        </div>
+                            <!-- <select [(ngModel)]="lCidade" class=" form-control form-control-sm" type="text" name="cidade" id="cidade">
+                                <option *ngFor="let estado of locais; let cidade of estado.cidades">{{cidade.sigla}}</option>
+                            </select> -->
+                            <input [(ngModel)]="lCidade" class="form-control form-control-sm" type="text" name="cidade" id="cidade"> </div>
                         <!-- <div class="form-group col-12">
                             <label for="foto">Foto:</label>
                             <input type="file" class="form-control form-control-sm">

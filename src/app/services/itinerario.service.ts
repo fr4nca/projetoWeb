@@ -7,9 +7,13 @@ import { MOCK } from '../mock'
 @Injectable()
 export class ItinerarioService {
 
-  itinerarios: Itinerario[] = MOCK
+  itinerarios: Itinerario[]
 
-  constructor() { }
+  constructor() {
+    this.getItinerarios().subscribe(iti => {
+      this.itinerarios = iti
+    });
+  }
 
   addItinerario(iti: Itinerario) {
     this.itinerarios.push(iti)
@@ -17,10 +21,11 @@ export class ItinerarioService {
   }
 
   getItinerarios(): Observable<Itinerario[]> {
-    if (localStorage.getItem('itinerarios') === null)
+    if (localStorage.getItem('itinerarios') === null) {
       this.itinerarios = MOCK
-    else
+    } else {
       this.itinerarios = JSON.parse(localStorage.getItem('itinerarios'))
+    }
     return of(this.itinerarios)
   }
 }

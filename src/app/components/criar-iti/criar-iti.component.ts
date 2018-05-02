@@ -3,9 +3,9 @@ import { Itinerario } from '../../models/Itinerario'
 import { User } from '../../models/User'
 import { Local } from '../../models/Local'
 import { Atividade } from '../../models/Atividade'
-import { Dica } from '../../models/Dica';
-import { ItinerarioService } from '../../services/itinerario.service';
-
+import { Dica } from '../../models/Dica'
+import { ItinerarioService } from '../../services/itinerario.service'
+import { LOCAIS } from '../../models/estados-cidades'
 
 @Component({
   selector: 'app-criar-iti',
@@ -15,6 +15,7 @@ import { ItinerarioService } from '../../services/itinerario.service';
 
 export class CriarItiComponent implements OnInit {
 
+  locais = LOCAIS
   aConteudo
   aHora
   dConteudo: string
@@ -40,41 +41,45 @@ export class CriarItiComponent implements OnInit {
 
   ngOnInit() { }
 
-
   addItinerario() {
 
-    this.local = {
-      pais: this.lPais,
-      cidade: this.lCidade,
-      estado: this.lEstado
-    }
+    if (this.lPais == null || this.lCidade == null || this.lEstado == null || this.uNome == null || this.uEmail == null || this.iDescricao == null) {
+      alert("Preencha todos os campos.")
+    } else {
 
-    this.usuario = {
-      nome: this.uNome,
-      email: this.uEmail
-    }
+      this.local = {
+        pais: this.lPais,
+        cidade: this.lCidade,
+        estado: this.lEstado
+      }
 
-    this.iti = {
-      atividades: this.atividades,
-      local: this.local,
-      usuario: this.usuario,
-      descricao: this.iDescricao,
-      nome: this.iNome
-    }
+      this.usuario = {
+        nome: this.uNome,
+        email: this.uEmail
+      }
 
-    this.itinerarioService.addItinerario(this.iti)
-    this.atividades = []
-    this.dicas = []
-    this.aConteudo = undefined
-    this.aHora = undefined
-    this.dConteudo = undefined
-    this.lPais = undefined
-    this.lCidade = undefined
-    this.lEstado = undefined
-    this.uNome = undefined
-    this.uEmail = undefined
-    this.iDescricao = undefined
-    this.iNome = undefined
+      this.iti = {
+        atividades: this.atividades,
+        local: this.local,
+        usuario: this.usuario,
+        descricao: this.iDescricao,
+        nome: this.iNome
+      }
+
+      this.itinerarioService.addItinerario(this.iti)
+      this.atividades = []
+      this.dicas = []
+      this.aConteudo = undefined
+      this.aHora = undefined
+      this.dConteudo = undefined
+      this.lPais = undefined
+      this.lCidade = undefined
+      this.lEstado = undefined
+      this.uNome = undefined
+      this.uEmail = undefined
+      this.iDescricao = undefined
+      this.iNome = undefined
+    }
   }
 
   setIti(ati) {

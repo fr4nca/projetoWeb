@@ -9,6 +9,7 @@ import { IndexComponent } from './components/index/index.component';
 import { CriarItiComponent } from './components/criar-iti/criar-iti.component';
 import { ItinerarioService } from './services/itinerario.service';
 
+
 const appRoutes: Routes = [
   { path: 'criar', component: CriarItiComponent },
   { path: '', component: IndexComponent },
