@@ -35,9 +35,10 @@ export class CriarItiComponent implements OnInit {
   local: Local
   itinerarioss: Itinerario[]
 
-  constructor(private itinerarioService: ItinerarioService) { }
+  constructor(private itinerarioService: ItinerarioService) {
+  }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
 
   addItinerario() {
