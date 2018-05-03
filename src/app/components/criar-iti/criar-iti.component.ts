@@ -54,12 +54,10 @@ export class CriarItiComponent implements OnInit {
   }
 
   addItinerario() {
-
-
     if (this.lPais == null || this.lCidade == null || this.lEstado == null || this.uNome == null || this.uEmail == null || this.iDescricao == null) {
       alert("Preencha todos os campos.")
     } else {
-      let idd = 0
+      let idd = 1
       this.itinerarioss.forEach((iti) => {
         idd++
       })

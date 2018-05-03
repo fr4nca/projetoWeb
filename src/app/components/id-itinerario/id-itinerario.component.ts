@@ -8,6 +8,7 @@ import { Itinerario } from '../../models/Itinerario'
   templateUrl: './id-itinerario.component.html',
   styleUrls: ['./id-itinerario.component.css']
 })
+
 export class IdItinerarioComponent implements OnInit {
 
   id
