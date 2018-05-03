@@ -9,7 +9,8 @@
   <div class="card card-body">
     Atividades:
     <ul>
-      <li *ngFor="let ati of this.itinerario.atividades">{{ati.conteudo}}</li>
+      <li *ngFor="let ati of this.itinerario.atividades" (click)="onSelect(atividades)"> {{ati.conteudo}}=</li>
     </ul>
+    <app-inserir-dicas></app-inserir-dicas>
   </div>
 </div>

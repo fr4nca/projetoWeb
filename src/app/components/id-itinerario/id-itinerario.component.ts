@@ -14,6 +14,7 @@ export class IdItinerarioComponent implements OnInit {
   id
   itinerarios: Itinerario[] = []
   itinerario: Itinerario
+  selectAtividade
 
   constructor(private itinerarioService: ItinerarioService, private route: ActivatedRoute) {
     this.id = this.route.snapshot.params.id
@@ -26,6 +27,10 @@ export class IdItinerarioComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  onSelect(atividade: Atividades){
+    this.selectAtividade;
   }
 
 }
