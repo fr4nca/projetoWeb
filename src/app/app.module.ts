@@ -11,7 +11,7 @@ import { CriarItiComponent } from './components/criar-iti/criar-iti.component';
 import { ItinerarioService } from './services/itinerario.service';
 import { ItinerarioComponent } from './components/itinerario/itinerario.component';
 import { IdItinerarioComponent } from './components/id-itinerario/id-itinerario.component';
-import { InserirDicasComponent } from './inserir-dicas/inserir-dicas.component'
+import { InserirDicasComponent } from './components/inserir-dicas/inserir-dicas.component'
 import { MapaComponent } from './components/mapa/mapa.component'
 
 

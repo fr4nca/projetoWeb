@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { RouterModule, Routes, ActivatedRoute } from '@angular/router';
 import { ItinerarioService } from '../../services/itinerario.service'
 import { Itinerario } from '../../models/Itinerario'
+import { Atividade } from '../../models/Atividade'
 
 @Component({
   selector: 'app-id-itinerario',
@@ -29,7 +30,7 @@ export class IdItinerarioComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSelect(atividade: Atividades){
+  onSelect(atividade: Atividade){
     this.selectAtividade;
   }
 
