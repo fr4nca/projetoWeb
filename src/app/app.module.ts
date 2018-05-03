@@ -13,7 +13,7 @@ import { IdItinerarioComponent } from './components/id-itinerario/id-itinerario.
 
 
 const appRoutes: Routes = [
-  { path: 'idItinerario/:id', component: IdItinerarioComponent },
+  { path: 'itinerario/:id', component: IdItinerarioComponent },
   { path: 'itinerario', component: ItinerarioComponent },
   { path: 'criar', component: CriarItiComponent },
   { path: '', component: IndexComponent },

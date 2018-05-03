@@ -84,19 +84,7 @@ export class CriarItiComponent implements OnInit {
       }
 
       this.itinerarioService.addItinerario(this.iti)
-      this.route.navigate(['/idItinerario', this.id])
-      this.atividades = []
-      this.dicas = []
-      this.aConteudo = undefined
-      this.aHora = undefined
-      this.dConteudo = undefined
-      this.lPais = undefined
-      this.lCidade = undefined
-      this.lEstado = undefined
-      this.uNome = undefined
-      this.uEmail = undefined
-      this.iDescricao = undefined
-      this.iNome = undefined
+      this.route.navigate(['/itinerario', this.id])
     }
   }
 
