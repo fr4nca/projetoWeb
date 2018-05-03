@@ -1,0 +1,7 @@
+<div class="container">
+  <ul>
+    <li *ngFor="let iti of itinerarios">
+      <a [routerLink]="['/idItinerario', iti.id]">{{iti.nome}}</a>
+    </li>
+  </ul>
+</div>

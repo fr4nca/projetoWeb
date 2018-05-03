@@ -6,6 +6,7 @@ import { Dica } from './models/Dica';
 
 export const MOCK: Itinerario[] = [
     {
+        id: 1,
         atividades: [
             {
                 conteudo: "Comer",
@@ -26,10 +27,11 @@ export const MOCK: Itinerario[] = [
             email: "victor@victor.com"
         },
         descricao: "Alecrim alecrim dourado",
-        nome: "Alecrim",
+        nome: "Alecrim1",
 
     },
     {
+        id: 2,
         atividades: [
             {
                 conteudo: "Acordar",
@@ -55,10 +57,11 @@ export const MOCK: Itinerario[] = [
             email: "victor@victor.com"
         },
         descricao: "Alecrim alecrim dourado",
-        nome: "Alecrim",
+        nome: "Alecrim2",
 
     },
     {
+        id: 3,
         atividades: [
             {
                 conteudo: "Comer",
@@ -95,7 +98,7 @@ export const MOCK: Itinerario[] = [
             email: "victor@victor.com"
         },
         descricao: "Alecrim alecrim dourado",
-        nome: "Alecrim",
+        nome: "Alecrim3",
 
     }
 

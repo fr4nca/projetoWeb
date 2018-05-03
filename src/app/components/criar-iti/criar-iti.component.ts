@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from "@angular/router"
 import { Itinerario } from '../../models/Itinerario'
 import { User } from '../../models/User'
 import { Local } from '../../models/Local'
@@ -26,6 +27,7 @@ export class CriarItiComponent implements OnInit {
   uEmail: string
   iNome: string
   iDescricao: string
+  id: number = 3
 
   iti: Itinerario
   atividades: Atividade[] = []
@@ -36,7 +38,7 @@ export class CriarItiComponent implements OnInit {
   local: Local
   itinerarioss: Itinerario[]
 
-  constructor(private itinerarioService: ItinerarioService) {
+  constructor(private itinerarioService: ItinerarioService, private route: Router) {
   }
 
   ngOnInit() { }
@@ -46,6 +48,8 @@ export class CriarItiComponent implements OnInit {
     if (this.lPais == null || this.lCidade == null || this.lEstado == null || this.uNome == null || this.uEmail == null || this.iDescricao == null) {
       alert("Preencha todos os campos.")
     } else {
+
+
 
       this.local = {
         pais: this.lPais,
@@ -57,16 +61,19 @@ export class CriarItiComponent implements OnInit {
         nome: this.uNome,
         email: this.uEmail
       }
+      this.id = this.id++;
 
       this.iti = {
         atividades: this.atividades,
         local: this.local,
         usuario: this.usuario,
         descricao: this.iDescricao,
-        nome: this.iNome
+        nome: this.iNome,
+        id: this.id
       }
 
       this.itinerarioService.addItinerario(this.iti)
+      this.route.navigate(['/idItinerario', this.id])
       this.atividades = []
       this.dicas = []
       this.aConteudo = undefined
