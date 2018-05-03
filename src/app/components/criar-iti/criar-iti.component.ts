@@ -50,18 +50,20 @@ export class CriarItiComponent implements OnInit {
   }
 
   selectId() {
-
+    let idd = 1
+    this.itinerarioss.forEach((iti) => {
+      idd++
+    })
+    return idd
   }
 
   addItinerario() {
     if (this.lPais == null || this.lCidade == null || this.lEstado == null || this.uNome == null || this.uEmail == null || this.iDescricao == null) {
       alert("Preencha todos os campos.")
     } else {
-      let idd = 1
-      this.itinerarioss.forEach((iti) => {
-        idd++
-      })
-      this.id = idd;
+      
+      this.id = this.selectId();
+
       this.local = {
         pais: this.lPais,
         cidade: this.lCidade,
@@ -72,7 +74,6 @@ export class CriarItiComponent implements OnInit {
         nome: this.uNome,
         email: this.uEmail
       }
-
 
       this.iti = {
         atividades: this.atividades,
