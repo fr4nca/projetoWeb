@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router"
 import { Itinerario } from '../../models/Itinerario'
+import { MapaComponent } from '../mapa/mapa.component'
 import { User } from '../../models/User'
 import { Local } from '../../models/Local'
 import { Atividade } from '../../models/Atividade'
@@ -15,6 +16,10 @@ import { LOCAIS } from '../../models/estados-cidades'
 })
 
 export class CriarItiComponent implements OnInit {
+
+  @ViewChild(MapaComponent) alecrim: MapaComponent
+
+  locall
 
   locais = LOCAIS
   aConteudo
@@ -42,7 +47,6 @@ export class CriarItiComponent implements OnInit {
     this.itinerarioService.getItinerarios().subscribe(iti => {
       this.itinerarioss = iti
     })
-
   }
 
   ngOnInit() {
@@ -58,17 +62,13 @@ export class CriarItiComponent implements OnInit {
   }
 
   addItinerario() {
-    if (this.lPais == null || this.lCidade == null || this.lEstado == null || this.uNome == null || this.uEmail == null || this.iDescricao == null) {
+    if (this.uNome == null || this.uEmail == null || this.iDescricao == null) {
       alert("Preencha todos os campos.")
     } else {
-      
-      this.id = this.selectId();
 
-      this.local = {
-        pais: this.lPais,
-        cidade: this.lCidade,
-        estado: this.lEstado
-      }
+      this.local = { local: this.alecrim.local }
+
+      this.id = this.selectId();
 
       this.usuario = {
         nome: this.uNome,
@@ -77,11 +77,11 @@ export class CriarItiComponent implements OnInit {
 
       this.iti = {
         atividades: this.atividades,
-        local: this.local,
         usuario: this.usuario,
         descricao: this.iDescricao,
         nome: this.iNome,
-        id: this.id
+        id: this.id,
+        local: this.local
       }
 
       this.itinerarioService.addItinerario(this.iti)

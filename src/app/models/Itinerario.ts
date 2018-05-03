@@ -8,5 +8,5 @@ export interface Itinerario {
     usuario: User,
     descricao: string,
     nome: string,
-    id?: number
+    id?: number    
 }

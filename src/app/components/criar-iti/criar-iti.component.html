@@ -30,7 +30,7 @@
             </div>
             <div>
                 <h3 class="mb-3">2 Local</h3>
-                <form>
+                <!-- <form>
                     <div class="form-row">
                         <div class="form-group col-12">
                             <label for="pais">Pais: </label>
@@ -47,16 +47,12 @@
                         </div>
                         <div class="form-group col-8">
                             <label for="cidade">Cidade:</label>
-                            <!-- <select [(ngModel)]="lCidade" class=" form-control form-control-sm" type="text" name="cidade" id="cidade">
-                                <option *ngFor="let estado of locais; let cidade of estado.cidades">{{cidade.sigla}}</option>
-                            </select> -->
+                            
                             <input [(ngModel)]="lCidade" class="form-control form-control-sm" type="text" name="cidade" id="cidade"> </div>
-                        <!-- <div class="form-group col-12">
-                            <label for="foto">Foto:</label>
-                            <input type="file" class="form-control form-control-sm">
-                        </div> -->
+                        
                     </div>
-                </form>
+                </form> -->
+                <app-mapa></app-mapa>
             </div>
         </div>
         <div class="col-md-4">
