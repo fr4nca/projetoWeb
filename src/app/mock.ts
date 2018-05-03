@@ -18,9 +18,7 @@ export const MOCK: Itinerario[] = [
             }
         ],
         local: {
-            pais: "Brasil",
-            estado: "DF",
-            cidade: "Brasília",
+            local: 'Brasília, DF, Brasil'
         },
         usuario: {
             nome: "Victor",
@@ -48,9 +46,7 @@ export const MOCK: Itinerario[] = [
             }
         ],
         local: {
-            pais: "Brasil",
-            estado: "DF",
-            cidade: "Brasília",
+            local: 'Brasília, DF, Brasil'
         },
         usuario: {
             nome: "Victor",
@@ -89,9 +85,7 @@ export const MOCK: Itinerario[] = [
             }
         ],
         local: {
-            pais: "Brasil",
-            estado: "DF",
-            cidade: "Brasília",
+            local: 'Brasília, DF, Brasil'
         },
         usuario: {
             nome: "Victor",

@@ -29,7 +29,6 @@ export class InserirDicasComponent implements OnInit {
     console.log(this.dDica)
     this.dica = { conteudo: this.dDica, usuario: this.usuario }
     this.atividade.dicas.push(this.dica)
-
   }
 
 }
