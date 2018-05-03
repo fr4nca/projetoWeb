@@ -27,7 +27,7 @@ export class CriarItiComponent implements OnInit {
   uEmail: string
   iNome: string
   iDescricao: string
-  id: number = 3
+  id: number
 
   iti: Itinerario
   atividades: Atividade[] = []
@@ -39,18 +39,31 @@ export class CriarItiComponent implements OnInit {
   itinerarioss: Itinerario[]
 
   constructor(private itinerarioService: ItinerarioService, private route: Router) {
+    this.itinerarioService.getItinerarios().subscribe(iti => {
+      this.itinerarioss = iti
+    })
+
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+
+  }
+
+  selectId() {
+
+  }
 
   addItinerario() {
+
 
     if (this.lPais == null || this.lCidade == null || this.lEstado == null || this.uNome == null || this.uEmail == null || this.iDescricao == null) {
       alert("Preencha todos os campos.")
     } else {
-
-
-
+      let idd = 0
+      this.itinerarioss.forEach((iti) => {
+        idd++
+      })
+      this.id = idd;
       this.local = {
         pais: this.lPais,
         cidade: this.lCidade,
@@ -61,7 +74,7 @@ export class CriarItiComponent implements OnInit {
         nome: this.uNome,
         email: this.uEmail
       }
-      this.id = this.id++;
+
 
       this.iti = {
         atividades: this.atividades,
