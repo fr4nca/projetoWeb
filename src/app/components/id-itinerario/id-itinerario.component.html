@@ -37,8 +37,9 @@
             <div class="card-body mb-3">
               <h3 class="card-title">Atividades</h3>
               <ul class="list-group">
-                <li (click)="done(ativ)" class="list-group-item" *ngFor="let ativ of this.itinerario.atividades">
-                  <i *ngIf="ativ.done" class="fa fa-check"></i>
+                <li class="list-group-item" *ngFor="let ativ of this.itinerario.atividades">
+                  <i *ngIf="ativ.done" (click)="done(ativ)" class="fa fa-check"></i>
+                  <i *ngIf="!ativ.done" (click)="done(ativ)" class="fa fa-minus"></i>
                  {{ativ.hora}} -> {{ativ.conteudo}}
                 </li>
               </ul>
