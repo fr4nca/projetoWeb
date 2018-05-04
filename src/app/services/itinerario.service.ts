@@ -15,6 +15,10 @@ export class ItinerarioService {
     });
   }
 
+  updateItis(itis: Itinerario[]){
+    localStorage.setItem('itinerarios', JSON.stringify(itis))
+  }
+
   addItinerario(iti: Itinerario) {
     this.itinerarios.push(iti)
     localStorage.setItem('itinerarios', JSON.stringify(this.itinerarios))

@@ -26,6 +26,9 @@ export const MOCK: Itinerario[] = [
         },
         descricao: "Alecrim alecrim dourado",
         nome: "Alecrim1",
+        avaliacao: 0,
+        likect: 0,
+        rate_it: 0
 
     },
     {
@@ -54,7 +57,9 @@ export const MOCK: Itinerario[] = [
         },
         descricao: "Alecrim alecrim dourado",
         nome: "Alecrim2",
-
+        avaliacao: 0,
+        likect: 0,
+        rate_it:0
     },
     {
         id: 3,
@@ -93,6 +98,9 @@ export const MOCK: Itinerario[] = [
         },
         descricao: "Alecrim alecrim dourado",
         nome: "Alecrim3",
+        avaliacao: 0,
+        likect: 0,
+        rate_it:0
 
     }
 

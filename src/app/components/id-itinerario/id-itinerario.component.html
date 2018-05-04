@@ -1,5 +1,16 @@
 <div class="container card card-body">
   <h3>{{this.itinerario.nome}}</h3>
+  <form #form="ngForm">
+  <bar-rating [(rate)]="rate" name="rating" [readOnly]="true" [max]="5" required disabled></bar-rating>
+  <div *ngIf="vclick">
+    <button type="button" class="btn btn-outline-success" disabled>Like</button>
+    <button type="button" class="btn btn-outline-danger" disabled>Dislike</button>
+  </div>
+  <div *ngIf="!vclick">
+    <button type="button" class="btn btn-outline-success" (click)="like()">Like</button>
+    <button type="button" class="btn btn-outline-danger" (click)="dislike()">Dislike</button>
+</div>
+</form>
   <div class="card card-body mb-3">
     Criador:
     <h4>{{this.itinerario.usuario.nome}}</h4>

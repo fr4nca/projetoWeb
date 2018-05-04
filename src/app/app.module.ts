@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { AgmCoreModule } from '@agm/core';
+import { BarRatingModule } from "ngx-bar-rating";
+
 
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -36,6 +38,7 @@ const appRoutes: Routes = [
 
   ],
   imports: [
+    BarRatingModule,
     ReactiveFormsModule,
     AgmCoreModule.forRoot({
       apiKey: "AIzaSyDzBOpN38p3ULocMvu5ykvWsRDr-1LYHls",

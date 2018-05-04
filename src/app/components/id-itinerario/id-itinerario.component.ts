@@ -16,6 +16,9 @@ export class IdItinerarioComponent implements OnInit {
   itinerarios: Itinerario[] = []
   itinerario: Itinerario
   selectAtividade
+  rate
+  vclick = false
+  porcent=0
 
   constructor(private itinerarioService: ItinerarioService, private route: ActivatedRoute) {
     this.id = this.route.snapshot.params.id
@@ -25,6 +28,7 @@ export class IdItinerarioComponent implements OnInit {
         this.itinerario = iti
       }
     })
+    this.rate = this.itinerario.rate_it
   }
 
   ngOnInit() {
@@ -34,4 +38,42 @@ export class IdItinerarioComponent implements OnInit {
     this.selectAtividade;
   }
 
+  rating_porcent(){
+    this.porcent = this.itinerario.likect/this.itinerario.avaliacao
+    if(this.porcent<=0.2){
+      this.rate = 1
+    }else if(this.porcent>0.2 && this.porcent<=0.4){
+      this.rate = 2
+    }else if(this.porcent>0.4 && this.porcent<=0.6){
+      this.rate = 3
+    }else if(this.porcent>0.6 && this.porcent<=0.8){
+      this.rate = 4
+    }else if(this.porcent>0.8){
+      this.rate = 5
+    }
+
+    this.itinerario.rate_it = this.rate
+    this.itinerarioService.updateItis(this.itinerarios)
+  }
+
+  like(){
+    this.vclick=true
+    this.itinerario.likect+=1
+    this.itinerario.avaliacao += 1
+    this.itinerarioService.updateItis(this.itinerarios)
+    this.rating_porcent()
+    console.log("Entrei no like "+this.itinerario.likect)
+    console.log("CtAvaliação "+this.itinerario.avaliacao)
+    console.log("Porcentagem "+this.porcent)
+  }
+
+  dislike(){
+    this.vclick=true
+    this.itinerario.avaliacao += 1
+    this.itinerarioService.updateItis(this.itinerarios)
+    this.rating_porcent()
+    console.log("Entrei no dislike "+this.itinerario.likect)
+    console.log("CtAvaliação "+this.itinerario.avaliacao)
+    console.log("Porcentagem "+this.porcent)
+  }
 }
