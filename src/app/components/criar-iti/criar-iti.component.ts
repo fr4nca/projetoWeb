@@ -103,8 +103,12 @@ export class CriarItiComponent implements OnInit {
   }
 
   addAtividade() {
-    this.atividade = { conteudo: this.aConteudo, hora: this.aHora, dicas: [] }
-    this.atividades.push(this.atividade);
+    if (this.aHora != undefined) {
+      this.atividade = { conteudo: this.aConteudo, hora: this.aHora, done: false, dicas: [] }
+      this.atividades.push(this.atividade);
+    } else {
+      alert("Digite a hora")
+    }
   }
 
   addDicas() {

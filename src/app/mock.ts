@@ -11,6 +11,7 @@ export const MOCK: Itinerario[] = [
             {
                 conteudo: "Comer",
                 hora: "18h30",
+                done: false,
                 dicas: [{
                     conteudo: "Comer direito",
                     usuario: this.usuario
@@ -27,7 +28,7 @@ export const MOCK: Itinerario[] = [
             email: "victor@victor.com"
         },
         descricao: "Alecrim alecrim dourado",
-        nome: "Alecrim1",
+        nome: "Itinerario Alecrim1",
         avaliacao: 0,
         likect: 0,
         rate_it: 0
@@ -39,6 +40,7 @@ export const MOCK: Itinerario[] = [
             {
                 conteudo: "Acordar",
                 hora: "8h00",
+                done: false,
                 dicas: [{
                     conteudo: "Acordar direito",
                     usuario: this.usuario
@@ -72,6 +74,7 @@ export const MOCK: Itinerario[] = [
             {
                 conteudo: "Comer",
                 hora: "18h30",
+                done: false,
                 dicas: [{
                     conteudo: "Comer direito",
                     usuario: this.usuario
@@ -84,6 +87,7 @@ export const MOCK: Itinerario[] = [
             {
                 conteudo: "Malhar",
                 hora: "15h00",
+                done: false,
                 dicas: [{
                     conteudo: "Malhar direito",
                     usuario: this.usuario

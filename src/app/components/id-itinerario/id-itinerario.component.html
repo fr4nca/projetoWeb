@@ -1,32 +1,57 @@
-<div class="container card card-body">
-  <h3>{{this.itinerario.nome}}</h3>
-  <form #form="ngForm">
-    <bar-rating [(rate)]="rate" name="rating" [readOnly]="true" [max]="5" required disabled></bar-rating>
-    <div *ngIf="vclick">
-      <button type="button" class="btn btn-outline-success" disabled>Like</button>
-      <button type="button" class="btn btn-outline-danger" disabled>Dislike</button>
+<div class="container">
+  <div class=" card shadow mb-3 border-dark">
+    <div class="card-header">
+      <h3 class="text-center">{{this.itinerario.nome}}</h3>
     </div>
-    <div *ngIf="!vclick">
-      <button type="button" class="btn btn-outline-success" (click)="like()">Like</button>
-      <button type="button" class="btn btn-outline-danger" (click)="dislike()">Dislike</button>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-6">
+          <div class="card shadow mb-3">
+            <div class="card-header">
+              Criador:
+              <h4>{{this.itinerario.usuario.nome}}</h4>
+              Social:
+              <h4>{{this.itinerario.usuario.email}}</h4>
+              Local:
+              <h4>{{this.itinerario.local.local}}</h4>
+              <div class="mb-1">
+                <bar-rating [(rate)]="rate" name="rating" [readOnly]="true" [max]="5" required disabled></bar-rating>
+                <div *ngIf="vclick">
+                  <button type="button" class="btn btn-outline-success" disabled>
+                    <i class="fa fa-thumbs-up"></i>
+                  </button>
+                  <button type="button" class="btn btn-outline-danger" disabled>
+                    <i class="fa fa-thumbs-down"></i>
+                  </button>
+                </div>
+                <div *ngIf="!vclick">
+                  <button type="button" class="btn btn-outline-success" (click)="like()">
+                    <i class="fa fa-thumbs-up"></i>
+                  </button>
+                  <button type="button" class="btn btn-outline-danger" (click)="dislike()">
+                    <i class="fa fa-thumbs-down"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="card-body mb-3">
+              <h3 class="card-title">Atividades</h3>
+              <ul class="list-group">
+                <li (click)="done(ativ)" class="list-group-item" *ngFor="let ativ of this.itinerario.atividades">
+                  <i *ngIf="ativ.done" class="fa fa-check"></i>
+                 {{ativ.hora}} -> {{ativ.conteudo}}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <app-inserir-dicas></app-inserir-dicas>
+        </div>
+      </div>
+      <div class=" mb-3 card card-body shadow">
+        <app-mapa [itiLocal]="this.itinerario.local"></app-mapa>
+      </div>
     </div>
-  </form>
-  <div class="card card-body mb-3">
-    Criador:
-    <h4>{{this.itinerario.usuario.nome}}</h4>
-    Social:
-    <h4>{{this.itinerario.usuario.email}}</h4>
-    Local:
-    <h4>{{this.itinerario.local.local}}</h4>
-  </div>
-  <div class=" mb-3 card card-body col-6">
-    <app-mapa [itiLocal]="this.itinerario.local"></app-mapa>
-  </div>
-  <div class="card card-body">
-    Atividades:
-    <ul>
-      <li *ngFor="let ati of this.itinerario.atividades" (click)="onSelect(atividades)"> {{ati.conteudo}}=</li>
-    </ul>
-    <app-inserir-dicas></app-inserir-dicas>
   </div>
 </div>

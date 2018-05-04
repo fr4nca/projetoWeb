@@ -33,7 +33,7 @@ export class IdItinerarioComponent implements OnInit {
   }
 
   ngOnInit() {
-   
+
   }
 
   onSelect(atividade: Atividade) {
@@ -77,5 +77,9 @@ export class IdItinerarioComponent implements OnInit {
     console.log("Entrei no dislike " + this.itinerario.likect)
     console.log("CtAvaliação " + this.itinerario.avaliacao)
     console.log("Porcentagem " + this.porcent)
+  }
+
+  done(ativ) {
+    ativ.done = !ativ.done
   }
 }
