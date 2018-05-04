@@ -18,7 +18,9 @@ export const MOCK: Itinerario[] = [
             }
         ],
         local: {
-            local: 'Brasília, DF, Brasil'
+            local: 'Brasília, DF, Brasil',
+            lat: -15.794363,
+            lon: -47.882236
         },
         usuario: {
             nome: "Victor",
@@ -49,7 +51,10 @@ export const MOCK: Itinerario[] = [
             }
         ],
         local: {
-            local: 'Brasília, DF, Brasil'
+            local: 'Brasília, DF, Brasil',
+            lat: -15.794363,
+            lon: -47.882236
+            
         },
         usuario: {
             nome: "Victor",
@@ -59,7 +64,7 @@ export const MOCK: Itinerario[] = [
         nome: "Alecrim2",
         avaliacao: 0,
         likect: 0,
-        rate_it:0
+        rate_it: 0
     },
     {
         id: 3,
@@ -90,7 +95,9 @@ export const MOCK: Itinerario[] = [
             }
         ],
         local: {
-            local: 'Brasília, DF, Brasil'
+            local: 'Brasília, DF, Brasil',
+            lat: -15.794363,
+            lon: -47.882236
         },
         usuario: {
             nome: "Victor",
@@ -100,7 +107,7 @@ export const MOCK: Itinerario[] = [
         nome: "Alecrim3",
         avaliacao: 0,
         likect: 0,
-        rate_it:0
+        rate_it: 0
 
     }
 

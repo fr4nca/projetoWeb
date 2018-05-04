@@ -1,8 +1,9 @@
-import { Component, ElementRef, NgZone, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, NgZone, OnInit, ViewChild, Input } from '@angular/core';
 import { MouseEvent } from '@agm/core';
 import { FormControl } from '@angular/forms';
-import {} from 'googlemaps';
+import { } from 'googlemaps';
 import { MapsAPILoader } from '@agm/core';
+import { Local } from 'protractor/built/driverProviders';
 
 @Component({
   selector: 'app-mapa',
@@ -11,7 +12,9 @@ import { MapsAPILoader } from '@agm/core';
 })
 
 export class MapaComponent implements OnInit {
-  
+
+  @Input() itiLocal
+
   local
   public latitude: number;
   public longitude: number;
@@ -27,40 +30,34 @@ export class MapaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    //set google maps defaults
+
     this.zoom = 4;
     this.latitude = 39.8282;
     this.longitude = -98.5795;
 
-    //create search FormControl
     this.searchControl = new FormControl();
 
-    //set current position
     this.setCurrentPosition();
 
-    //load Places Autocomplete
-    this.mapsAPILoader.load().then(() => {
-      let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
-        types: ["geocode"]
-      });
-      autocomplete.addListener("place_changed", () => {
-        this.ngZone.run(() => {
-          //get the place result
-          let place: google.maps.places.PlaceResult = autocomplete.getPlace();
-
-          //verify result
-          if (place.geometry === undefined || place.geometry === null) {
-            return;
-          }
-
-          //set latitude, longitude and zoom
-          this.latitude = place.geometry.location.lat();
-          this.longitude = place.geometry.location.lng();
-          this.zoom = 12;
-          this.local = autocomplete.getPlace().formatted_address
+    if (!this.itiLocal) {
+      this.mapsAPILoader.load().then(() => {
+        let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
+          types: ["geocode"]
+        });
+        autocomplete.addListener("place_changed", () => {
+          this.ngZone.run(() => {
+            let place: google.maps.places.PlaceResult = autocomplete.getPlace();
+            if (place.geometry === undefined || place.geometry === null) {
+              return;
+            }
+            this.latitude = place.geometry.location.lat();
+            this.longitude = place.geometry.location.lng();
+            this.zoom = 12;
+            this.local = autocomplete.getPlace()
+          });
         });
       });
-    });
+    }
   }
 
   private setCurrentPosition() {

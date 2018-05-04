@@ -7,7 +7,6 @@ import { Local } from '../../models/Local'
 import { Atividade } from '../../models/Atividade'
 import { Dica } from '../../models/Dica'
 import { ItinerarioService } from '../../services/itinerario.service'
-import { LOCAIS } from '../../models/estados-cidades'
 
 @Component({
   selector: 'app-criar-iti',
@@ -19,15 +18,9 @@ export class CriarItiComponent implements OnInit {
 
   @ViewChild(MapaComponent) alecrim: MapaComponent
 
-  locall
-
-  locais = LOCAIS
   aConteudo
   aHora
   dConteudo: string
-  lPais
-  lEstado
-  lCidade
   uNome: string
   uEmail: string
   iNome: string
@@ -66,7 +59,11 @@ export class CriarItiComponent implements OnInit {
       alert("Preencha todos os campos.")
     } else {
 
-      this.local = { local: this.alecrim.local }
+      this.local = {
+        local: this.alecrim.local.formatted_address,
+        lat: this.alecrim.latitude,
+        lon: this.alecrim.longitude
+      }
 
       this.id = this.selectId();
 

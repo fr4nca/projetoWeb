@@ -1,9 +1,16 @@
 <div class="container">
-  <div class="form-group">
-    <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control"
-      #search [formControl]="searchControl">
+  <div *ngIf="!this.itiLocal">
+    <div class="form-group">
+      <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control"
+        #search [formControl]="searchControl">
+    </div>
+    <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="true" [zoom]="zoom">
+      <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+    </agm-map>
   </div>
-  <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
-    <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
-  </agm-map>
+  <div *ngIf="this.itiLocal">
+    <agm-map [latitude]="this.itiLocal.lat" [longitude]="this.itiLocal.lon" [scrollwheel]="true" [zoom]="zoom">
+      <agm-marker [latitude]="this.itiLocal.lat" [longitude]="this.itiLocal.lon"></agm-marker>
+    </agm-map>
+  </div>
 </div>
