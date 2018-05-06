@@ -36,8 +36,8 @@ export class IdItinerarioComponent implements OnInit {
 
   }
 
-  onSelect(atividade: Atividade) {
-    this.selectAtividade;
+  onSelect(A) {
+    this.selectAtividade = A;
   }
 
   rating_porcent() {

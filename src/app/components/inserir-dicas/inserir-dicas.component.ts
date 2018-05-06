@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, Input } from '@angular/core'
 import { Itinerario } from '../../models/Itinerario'
 import { User } from '../../models/User'
 import { Atividade } from '../../models/Atividade'
@@ -16,18 +16,20 @@ export class InserirDicasComponent implements OnInit {
   dicas: Dica[] = []
   dica: Dica
   dDica: string
+  dUsuario: string
   usuario: User
-  atividade
+  @Input() selectAtividade: Atividade
 
-  constructor() { }
+  constructor(private itinerarioService: ItinerarioService) { }
 
   ngOnInit() {
   }
 
   addDica(dDica){
-    console.log(this.dDica)
-    this.dica = { conteudo: this.dDica, usuario: this.usuario }
-    this.atividade.dicas.push(this.dica)
+      console.log(this.dDica)
+      console.log(this.selectAtividade)
+      this.dica = { conteudo: this.dDica, usuario: { nome: this.dUsuario, email: ''}}
+      this.selectAtividade.dicas.push(this.dica)
   }
 
 }
