@@ -5,11 +5,17 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.css']
 })
-export class IndexComponent implements OnInit {
 
-  constructor() { }
+export class IndexComponent implements OnInit {
+ 
+
+  constructor() {
+  }
 
   ngOnInit() {
+    data-interval="pause";
   }
 
 }
+
+  
