@@ -13,7 +13,7 @@ export class IndexComponent implements OnInit {
   }
 
   ngOnInit() {
-    data-interval="pause";
+    
   }
 
 }

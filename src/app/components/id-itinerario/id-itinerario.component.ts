@@ -81,6 +81,7 @@ export class IdItinerarioComponent implements OnInit {
 
   done(ativ) {
     ativ.done = !ativ.done
+    this.itinerarioService.updateItis(this.itinerarios)
   }
 
 }
