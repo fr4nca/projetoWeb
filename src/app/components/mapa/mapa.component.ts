@@ -31,7 +31,7 @@ export class MapaComponent implements OnInit {
 
   ngOnInit() {
 
-    this.zoom = 4;
+    this.zoom = 12;
     this.latitude = 39.8282;
     this.longitude = -98.5795;
 
