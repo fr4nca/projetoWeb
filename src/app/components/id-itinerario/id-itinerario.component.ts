@@ -20,6 +20,7 @@ export class IdItinerarioComponent implements OnInit {
   vclick = false
   porcent = 0
   itiLocal
+  atividade
 
   constructor(private itinerarioService: ItinerarioService, private route: ActivatedRoute) {
     this.id = this.route.snapshot.params.id
@@ -35,6 +36,21 @@ export class IdItinerarioComponent implements OnInit {
   ngOnInit() {
 
   }
+
+
+  setIti(ati) {
+    this.atividade = ati
+  }
+
+  selecionado(ati) {
+    if (this.atividade == ati) {
+      return 'lightgrey'
+    } else {
+      return 'white'
+    }
+  }
+
+
 
   onSelect(A) {
     this.selectAtividade = A;

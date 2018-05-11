@@ -37,7 +37,7 @@
             <div class="card-body mb-3">
               <h3 class="card-title">Atividades</h3>
               <ul class="list-group">
-                <li class="list-group-item" *ngFor="let ativ of this.itinerario.atividades" (click)="onSelect(ativ)" >
+                <li class="list-group-item" *ngFor="let ativ of this.itinerario.atividades" [ngStyle]="{'background-color': selecionado(ativ)}" (click)="setIti(ativ)" (click)="onSelect(ativ)" >
                   <i *ngIf="ativ.done" (click)="done(ativ)" class="fa fa-check-square"></i>
                   <i *ngIf="!ativ.done" (click)="done(ativ)" class="fa fa-square"></i>
                  {{ativ.hora}} -> {{ativ.conteudo}}

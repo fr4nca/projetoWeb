@@ -2,7 +2,9 @@
   <div class="card-body">
     <h5 class="card-title">Não se esqueça:</h5>
     <div class="mt-3">
-      <p class="card-text">Listar as dicas da atividade.</p>
+        <ul *ngIf="this.selectAtividade">
+          <li *ngFor="let lDicas of selectAtividade.dicas">{{lDicas.conteudo}}</li>
+        </ul>
       <form>
         <div class="form-group">
           <label for="dica">Escreva a dica: </label>
@@ -10,12 +12,13 @@
         </div>
         <div>
           <label for="dica">Usuário: </label>
-          <textarea [(ngModel)]="dUsuario" type="text" class="form-control form-control-sm" id="dUser" name="dUser"></textarea>
+          <input [(ngModel)]="dUsuario" type="text" class="form-control form-control-sm" id="dUser" name="dUser">
         </div>
-        <button class="btn btn-dark btn-sm" (click)="addDica()">
-          <i class="fa fa-plus"></i>
+        <button class="btn btn-dark btn-sm mt-2" (click)="addDica()">
+          <i class="fa fa-plus"> Adicionar dica</i>
         </button>
       </form>
+
     </div>
   </div>
 </div>
