@@ -267,5 +267,238 @@ export const MOCK: Itinerario[] = [
     avaliacao: 18,
     likect: 11,
     rate_it: 4
+  },
+  {
+    id: 3,
+    atividades: [
+      {
+        conteudo: "Prainhas do Pontal do Atalaia",
+        hora: "7h00",
+        done: false,
+        dicas: [
+          {
+            conteudo: "Levar bolsa térmica",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Levar Toalha",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Levar óculos de mergulho",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Levar água",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Levar protetor solar",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Levar lanche",
+            usuario: this.usuario
+          },
+          {
+            conteudo:
+              "Escadaria longo, exigindo um pouco de fôlego para voltar.",
+            usuario: this.usuario
+          },
+          {
+            conteudo:
+              "Chegar cedo para conseguir lugar para estacionar perto.",
+            usuario: this.usuario
+          }
+        ]
+      },
+      {
+        conteudo: "Voltar à cidade para Almoçar",
+        hora: "12h00",
+        done: false,
+        dicas: [
+          {
+            conteudo: "Levar dinheiro ou cartão de crédito.",
+            usuario: this.usuario
+          },
+        ]
+      },
+      {
+        conteudo: "Praia do Forno",
+        hora: "14h00",
+        done: false,
+        dicas: [
+          {
+            conteudo: "Levar água para a trilha",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Tomar cuidado com pedras escorregadias",
+            usuario: this.usuario
+          },
+          {
+            conteudo:
+              "Levar óculos de mergulho para observar os peixes",
+            usuario: this.usuario
+          },
+          {
+            conteudo:
+              "Levar toalha",
+            usuario: this.usuario
+          }
+        ]
+      },
+      {
+        conteudo: "Ver o pôr do sol na Praia Grande",
+        hora: "17h30",
+        done: false,
+        dicas: [
+          {
+            conteudo: "Dependendo da época do ano o pôr do sol pode acontecer mais cedo ou mais tarde deste horário.",
+            usuario: this.usuario
+          },
+          {
+            conteudo:
+              "Local venta bastante",
+            usuario: this.usuario
+          },
+        ]
+      },
+      {
+        conteudo: "Jantar em Cabo Frio",
+        hora: "20h00",
+        done: false,
+        dicas: [
+          {
+            conteudo: "Cabo frio fica a 15min de Arraial",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Bons locais para comer, possui shopping",
+            usuario: this.usuario
+          },
+        ]
+      },
+    ],
+    local: {
+      local: "Arraial do Cabo, RJ, Brasil",
+      lat: -22.965833,
+      lon: -42.027778
+    },
+    usuario: {
+      nome: "Ronan F. Gonçalves",
+      email: "ronan.fg@sempreceub.com"
+    },
+    descricao:
+      "Itineário para orientar um dia de visita à algumas da melhores praias do Arraial do Cabo e apreciar o pôr do Sol.",
+    nome: "Itinerario do Arraial do Cabo",
+    avaliacao: 25,
+    likect: 20,
+    rate_it: 4
+  },
+  {
+    id: 4,
+    atividades: [
+      {
+        conteudo: "Passeio de Escuna",
+        hora: "8h00",
+        done: false,
+        dicas: [
+          {
+            conteudo: "Alguns passeios duram 4 horas",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Realizar reserva um dia antes",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Levar dinheiro",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Levar óculos de mergulho",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Levar toalha",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Levar remédio para enjoo",
+            usuario: this.usuario
+          }
+        ]
+      },
+      {
+        conteudo: "Voltar à cidade para Almoçar",
+        hora: "12h30",
+        done: false,
+        dicas: [
+          {
+            conteudo: "Levar dinheiro ou cartão de crédito.",
+            usuario: this.usuario
+          },
+        ]
+      },
+      {
+        conteudo: "Praia de Geribá",
+        hora: "14h00",
+        done: false,
+        dicas: [
+          {
+            conteudo: "Praia extensa boa para fazer caminhada",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Possui alguns quiosques para comer ou beber",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Levar protetor",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Levar toalha",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Levar dinheiro",
+            usuario: this.usuario
+          }
+
+        ]
+      },
+      {
+        conteudo: "Passear pela Praça Central de Búzios",
+        hora: "19h30",
+        done: false,
+        dicas: [
+          {
+            conteudo: "Praça bem movimentada à noite, bom local para comprar artesanatos",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Possui ótimos restaurantes, mas com preço um pouco salgado",
+            usuario: this.usuario
+          },
+        ]
+      }
+    ],
+    local: {
+      local: "Búzios, RJ, Brasil",
+      lat: -22.746944,
+      lon: -41.881944
+    },
+    usuario: {
+      nome: "Ronan F. Gonçalves",
+      email: "ronan.fg@sempreceub.com"
+    },
+    descricao:
+      "Itineário para orientar um belo dia de lazer em Búzios, com passeio de escuna, praias, e ótimo passeio na praça. ",
+    nome: "Itinerario de Passeio em Búzios",
+    avaliacao: 25,
+    likect: 20,
+    rate_it: 4
   }
 ];

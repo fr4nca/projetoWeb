@@ -26,8 +26,6 @@ export class InserirDicasComponent implements OnInit {
   addDica() {
     if (this.selectAtividade != undefined) {
       if (this.dDica != undefined) {
-        console.log(this.dDica);
-        console.log(this.selectAtividade);
         this.dica = {
           conteudo: this.dDica,
           usuario: { nome: this.dUsuario, email: "" }
