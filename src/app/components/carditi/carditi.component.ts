@@ -49,7 +49,5 @@ export class CarditiComponent implements OnInit {
 
   ngOnInit() {
     this.getItinerarios();
-    console.log(this.itinerario);
-    console.log(this.itinerario.rate_it);
   }
 }

@@ -501,4 +501,280 @@ export const MOCK: Itinerario[] = [
     likect: 20,
     rate_it: 4
   }
+  {
+  id: 5,
+  atividades: [
+    {
+      conteudo: "Começe já tiando fotos pois a vista é linda na entrada.",
+      hora: "8h30",
+      done: false,
+      dicas: [
+        {
+          conteudo: "Não esqueça a sua câmera digital ou celular!",
+          usuario: this.usuario
+        },
+        {
+          conteudo: "Chegue bem cedo, é bem dificil tirar fotos quado a entrada está lotada",
+          usuario: this.usuario
+        }
+      ]
+    },
+    {
+      conteudo: " Começe de forma radical indo na Roller Coaster Aerosmith! ",
+      hora: "9h00",
+      done: false,
+      dicas: [
+        {
+          conteudo: "Não esqueça seu cartão FastPass",
+          usuario: this.usuario
+        },
+        {
+          conteudo: "A preferencia é ir de manha pois voce não vai estar muito cansado e a fila da atração é menor!",
+          usuario: this.usuario
+        },
+        {
+          conteudo: "Chegar cedo, a fila fica grande",
+          usuario: this.usuario
+        },
+       ]
+    },
+    {
+      conteudo: "Entre em uma jornada na The Twilight Tower of Terror - Outra atração radical! ",
+      hora: "10h00",
+      done: false,
+      dicas: [
+        {
+          conteudo: "Importante não ter medo de altura",
+          usuario: this.usuario
+        },
+        {
+          conteudo: "Não coma antes, a menos que queira passar mal!",
+          usuario: this.usuario
+        },
+        {
+          conteudo:
+            "Também tente chegar cedo pois ninguém gosta de encarar filas grades!",
+          usuario: this.usuario
+        }
+      ]
+    },
+    {
+      conteudo: "Hora do almoço!",
+      hora: "12h00",
+      done: false,
+      dicas: [
+        {
+          conteudo: "Aproveite dos restaurantes, pois há várias variedades",
+          usuario: this.usuario
+        },
+        {
+          conteudo: "Não coma muito, mas não coma pouco. O dia é cheio e cansativo é você precisa estar 100%",
+          usuario: this.usuario
+        }
+      ]
+    },
+    {
+      conteudo: "Aproveite teatros, espetáculos e tire fotos depois do almoço. ",
+      hora: "14h30",
+      done: false,
+      dicas: [
+        {
+          conteudo: "Aproveite para digestão",
+          usuario: this.usuario
+        },
+        {
+          conteudo: "Não perca a peça do Indiana Jones",
+          usuario: this.usuario
+        }
+      ]
+    },
+    {
+      conteudo: "Visite a atração Toy Story Mania - Atração de tiro ao alvo bem divertido. ",
+      hora: "16h00",
+      done: false,
+      dicas: [
+        {
+          conteudo: "Tenha uma mira boa!",
+          usuario: this.usuario
+        },
+        {
+          conteudo:"Dê o melhor de si, o jogo é de competição entre outros jogadores",
+          usuario: this.usuario
+        }
+      ]
+    },
+    {
+      conteudo: "Aproveite as lojas do parque ",
+      hora: "18h00",
+      done: false,
+      dicas: [
+        {
+          conteudo: "Compre camisas",
+          usuario: this.usuario
+        },
+        {
+          conteudo:"Compre chaveiros e canecas customizados",
+          usuario: this.usuario
+        }
+      ]
+    },
+    {
+      conteudo: "Por fim não perca o incrivel Fantasmic - Show de fogos de artificios que te deixará de boca aberta ",
+      hora: "20h00",
+      done: false,
+      dicas: [
+        {
+          conteudo: "Chegue cedo para conseguir um ótimo lugar na arquibancada",
+          usuario: this.usuario
+        },
+        {
+          conteudo:"Coma um lanche antes pois o espetáculo é grande",
+          usuario: this.usuario
+        },
+        {
+          conteudo:"Não feche os olhos",
+          usuario: this.usuario
+        }
+      ]
+    }
+
+  ],
+  local: {
+    local: "Hollywood Studios, Orlando, FL, USA",
+    lat: 28.357537,
+    lon: -81.558270
+  },
+  usuario: {
+    nome: "João Paulo Cossi",
+    email: "jppcossi@gmail.com"
+  },
+  descricao:
+    "Itinerário com objetivo principal direcionar turistas a favor de um melhor proveito no parque Disney's Hollywood Studios.",
+  nome: "Itinerario Seja feliz na Disney's Hollywood Studios",
+  avaliacao: 14,
+  likect: 10,
+  rate_it: 4
+  },
+
+  {
+  id: 6,
+  atividades: [
+    {
+      conteudo: "Tomar café da manha em uma cafeteria",
+      hora: "8h00",
+      done: false,
+      dicas: [
+        {
+          conteudo: "Não esqueça de dinheiro",
+          usuario: this.usuario
+        },
+        {
+          conteudo: "Coma os famosos waffles americanos com um clocolate quente",
+          usuario: this.usuario
+        }
+      ]
+    },
+    {
+      conteudo: "Veja a cidade de Nova York acordando no One World Obervatory",
+      hora: "10h00",
+      done: false,
+      dicas: [
+        {
+          conteudo: "Não tenha medo de altura",
+          usuario: this.usuario
+        },
+        {
+          conteudo: "Não esuqeça de uma camera para fotos",
+          usuario: this.usuario
+        },
+        {
+          conteudo: "Chegue cedo pois o observatório pode estar cheio",
+          usuario: this.usuario
+        },
+      ]
+    },
+    {
+      conteudo: "Experimente os variados fastfoods e restaurantes",
+      hora: "13h00",
+      done: false,
+      dicas: [
+        {
+          conteudo: "Seja fluente em ingles",
+          usuario: this.usuario
+        },
+        {
+          conteudo: "Não coma muito pois voce vai andar praticamente o dia todo",
+          usuario: this.usuario
+        },
+        {
+          conteudo:"Experimente o Carbonara, um ótimo restaurante!",
+          usuario: this.usuario
+        }
+      ]
+    },
+    {
+      conteudo: "Visite a Time Square: O coração de Manhattan",
+      hora: "15h30",
+      done: false,
+      dicas: [
+        {
+          conteudo: "Tire bastante fotos",
+          usuario: this.usuario
+        },
+        {
+          conteudo:"Visite os pontos turisticos do local como estátuas famosas.",
+          usuario: this.usuario
+        }
+      ]
+    },
+    {
+      conteudo: "Aproveite do outlet",
+      hora: "18h00",
+      done: false,
+      dicas: [
+        {
+          conteudo: "Leve já o guia do outlet para ser mais eficientenas compras",
+          usuario: this.usuario
+        },
+        {
+          conteudo: "Não esqueça de levar dinheiro",
+          usuario: this.usuario
+        }
+      ]
+    },
+    {
+      conteudo: "Visite Empire State Building e veja a cidade mais movimentada do mundo de noite",
+      hora: "20h00",
+      done: false,
+      dicas: [
+        {
+          conteudo: "Não tenha medo de altura!",
+          usuario: this.usuario
+        },
+        {
+          conteudo:"De preferência venha de noite por conta das luzes da cidade",
+          usuario: this.usuario
+        }
+      ]
+    }
+  ],
+
+  local: {
+    local: "Nova York, NY, USA",
+    lat: 40.712500,
+    lon: -74.004470
+  },
+  usuario: {
+    nome: "João Paulo Cossi",
+    email: "jppcossi@gmail.com"
+  },
+  descricao:
+    "Itinerário voltado para e orientar melho em Nova York",
+  nome: "Itinerario de Nova York",
+  avaliacao: 10,
+  likect: 4,
+  rate_it: 6
+  }
+}
+
 ];
