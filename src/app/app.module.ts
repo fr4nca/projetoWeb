@@ -14,7 +14,8 @@ import { ItinerarioService } from './services/itinerario.service';
 import { ItinerarioComponent } from './components/itinerario/itinerario.component';
 import { IdItinerarioComponent } from './components/id-itinerario/id-itinerario.component';
 import { InserirDicasComponent } from './components/inserir-dicas/inserir-dicas.component'
-import { MapaComponent } from './components/mapa/mapa.component'
+import { MapaComponent } from './components/mapa/mapa.component';
+import { CarditiComponent } from './components/carditi/carditi.component'
 
 
 const appRoutes: Routes = [
@@ -34,7 +35,8 @@ const appRoutes: Routes = [
     ItinerarioComponent,
     IdItinerarioComponent,
     InserirDicasComponent,
-    MapaComponent
+    MapaComponent,
+    CarditiComponent
 
   ],
   imports: [

@@ -28,3 +28,7 @@
 	</div>
 	<button routerLink="/criar" class="btn btn-primary mt-3">Monte o seu!</button>
 </div>
+
+<div class="card-deck">
+	<app-carditi *ngFor="let iti of itinerarios" [itinerario]="iti" ></app-carditi>
+</div>
