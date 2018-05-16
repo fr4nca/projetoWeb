@@ -505,7 +505,7 @@ export const MOCK: Itinerario[] = [
   id: 5,
   atividades: [
     {
-      conteudo: "Começe já tiando fotos pois a vista é linda na entrada.",
+      conteudo: "Comece já tirando fotos pois a vista é linda na entrada.",
       hora: "8h30",
       done: false,
       dicas: [
@@ -514,13 +514,13 @@ export const MOCK: Itinerario[] = [
           usuario: this.usuario
         },
         {
-          conteudo: "Chegue bem cedo, é bem dificil tirar fotos quado a entrada está lotada",
+          conteudo: "Chegue bem cedo, é bem dificil tirar fotos quando a entrada está lotada",
           usuario: this.usuario
         }
       ]
     },
     {
-      conteudo: " Começe de forma radical indo na Roller Coaster Aerosmith! ",
+      conteudo: " Comece de forma radical indo na Roller Coaster Aerosmith! ",
       hora: "9h00",
       done: false,
       dicas: [
@@ -568,7 +568,7 @@ export const MOCK: Itinerario[] = [
           usuario: this.usuario
         },
         {
-          conteudo: "Não coma muito, mas não coma pouco. O dia é cheio e cansativo é você precisa estar 100%",
+          conteudo: "Não coma muito, mas não coma pouco. O dia é cheio e cansativo e você precisa estar 100%",
           usuario: this.usuario
         }
       ]
@@ -684,7 +684,7 @@ export const MOCK: Itinerario[] = [
           usuario: this.usuario
         },
         {
-          conteudo: "Não esuqeça de uma camera para fotos",
+          conteudo: "Não esqueça de uma camera para fotos",
           usuario: this.usuario
         },
         {
