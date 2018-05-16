@@ -1,7 +1,7 @@
 <div class="container">
-  <ul>
-    <li *ngFor="let iti of itinerarios">
-      <a [routerLink]="['/itinerario', iti.id]">{{iti.nome}}</a>
-    </li>
-  </ul>
+  <div class="col d-flex">
+    <div class="card-deck">
+      <app-carditi *ngFor="let iti of itinerarios" [itinerario]="iti"></app-carditi>
+    </div>
+  </div>
 </div>
