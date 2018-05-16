@@ -1,11 +1,13 @@
-	<div class="card" style="width: 18rem;">
-		<div class="card-body">
-		    <h6 class="card-title">
-          <a [routerLink]="['/itinerario', itinerario.id]">{{itinerario.nome}}</a>
-        </h6>
-		    <p class="card-text">Cidade: {{itinerario.local.local}}</p>
-	    	<p class="card-text">Criado por: {{itinerario.usuario.nome}}</p>
-        <p class="card-text">Descrição: {{itinerario.descricao}}</p>
-	    	<bar-rating [(rate)]="rate" name="rating" [readOnly]="true" [max]="5" required disabled></bar-rating>
-	    </div>
+<div class="mb-4 card" style="width: 18rem;">
+	<div>
+		<h5 class="card-header">
+			<a [routerLink]="['/itinerario', itinerario.id]">{{itinerario.nome}}</a>
+		</h5>
 	</div>
+	<div class="card-body card-text">
+		<p>Cidade: {{itinerario.local.local}}</p>
+		<p>Criado por: {{itinerario.usuario.nome}}</p>
+		<p>Descrição: {{itinerario.descricao}}</p>
+		<bar-rating [(rate)]="rate" name="rating" [readOnly]="true" [max]="5" required disabled></bar-rating>
+	</div>
+</div>
