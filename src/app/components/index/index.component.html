@@ -1,4 +1,5 @@
 <div class="container">
+	<h4>Como montar seu Itinerario</h4>
 	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 		<ol class="carousel-indicators">
 			<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -7,13 +8,46 @@
 		</ol>
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img class="d-block w-100" src="../../../assets/imagens/1.jpeg" alt="Primeiro passo hahahahaha">
+				<img class="d-block w-100" src="../../../assets/imagens/Criar-Passo-1.jpg" alt="Primeiro passo hahahahaha">
+				<div class="carousel-caption d-none d-md-block">
+	    		<h5>Passo 1</h5>
+	    		<p>Preencha suas informações pessoais para que outros usuarios te reconheçam!</p>
+	  		</div>
 			</div>
 			<div class="carousel-item">
-				<img class="d-block w-100" src="../../../assets/imagens/2.jpeg" alt="Segundo passo hahahaha">
+				<img class="d-block w-100" src="../../../assets/imagens/Criar-Passo-2.jpg" alt="Segundo passo hahahaha">
+				<div class="carousel-caption d-none d-md-block">
+	    		<h5>Passo 2</h5>
+	    		<p>Escolha a localidade de seu itinerario! </p>
+	  		</div>
 			</div>
 			<div class="carousel-item">
-				<img class="d-block w-100" src="../../../assets/imagens/3.jpeg" alt="Terceiro passo hahahahaha">
+				<img class="d-block w-100" src="../../../assets/imagens/Criar-Passo-3.jpg" alt="Terceiro passo hahahahaha">
+				<div class="carousel-caption d-none d-md-block">
+	    		<h5>Passo 3</h5>
+	    		<p>Acrescente as atividades que você gostaria que outros usuarios façam!</p>
+	  		</div>
+			</div>
+			<div class="carousel-item">
+				<img class="d-block w-100" src="../../../assets/imagens/Criar-Passo-4.jpg" alt="Terceiro passo hahahahaha">
+				<div class="carousel-caption d-none d-md-block">
+	    		<h5>Passo 4</h5>
+	    		<p>Escreva dicas sobre a localidade para ajudar na viagem de outros usuarios! </p>
+	  		</div>
+			</div>
+			<div class="carousel-item">
+				<img class="d-block w-100" src="../../../assets/imagens/Criar-Passo-5.jpg" alt="Terceiro passo hahahahaha">
+				<div class="carousel-caption d-none d-md-block">
+	    		<h5>Passo 5</h5>
+	    		<p>Faça a descrição de seu inerario! </p>
+	  		</div>
+			</div>
+			<div class="carousel-item">
+				<img class="d-block w-100" src="../../../assets/imagens/Criar-passo-6.jpg" alt="Terceiro passo hahahahaha">
+				<div class="carousel-caption d-none d-md-block">
+	    		<h5>Passo 6</h5>
+	    		<p>Finalize seu itinerario apertando o botão Concluir e tadam!!!<br> Outros usuarios podem aproveitar do seu itinerario</p>
+	  		</div>
 			</div>
 		</div>
 
@@ -27,8 +61,11 @@
 		</a>
 	</div>
 	<button routerLink="/criar" class="btn btn-primary mt-3">Monte o seu!</button>
+	<h4>Envios mais Visualizados</h4>
 </div>
 
-<div class="card-deck">
-	<app-carditi *ngFor="let iti of itinerarios" [itinerario]="iti" ></app-carditi>
+<div class="col d-flex justify-content-center">
+	<div class="card-deck ">
+		<app-carditi *ngFor="let iti of itinerarios" [itinerario]="iti" ></app-carditi>
+	</div>
 </div>

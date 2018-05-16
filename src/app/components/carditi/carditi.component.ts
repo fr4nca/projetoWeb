@@ -18,9 +18,8 @@ export class CarditiComponent implements OnInit {
   //rate = this.itinerario.rate_it
   itinerarios : Itinerario[] = []
   itinerario : Itinerario
-  itinerariosRank5 : ItinerariosRank5[] = [];
-  itinerariosRank4 : ItinerariosRank4[] = [];
-
+  itinerariosRank5 : ItinerariosRank5[] = []
+  itinerariosRank4 : ItinerariosRank4[] = []
   //rank5 : rank5[] = []
   //rank4 : rank4[] = []
   //rank3 : rank3[] = []

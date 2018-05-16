@@ -1,10 +1,11 @@
-
 	<div class="card" style="width: 18rem;">
 		<div class="card-body">
-		    <li class="card-title">
-		    <h6 class="card-subtitle mb-2 text-muted">{{itinerario.nome}}</h6>
+		    <h6 class="card-title">
+          <a [routerLink]="['/itinerario', itinerario.id]">{{itinerario.nome}}</a>
+        </h6>
 		    <p class="card-text">Cidade: {{itinerario.local.local}}</p>
 	    	<p class="card-text">Criado por: {{itinerario.usuario.nome}}</p>
+        <p class="card-text">Descrição: {{itinerario.descricao}}</p>
 	    	<bar-rating [(rate)]="rate" name="rating" [readOnly]="true" [max]="5" required disabled></bar-rating>
 	    </div>
 	</div>
