@@ -786,5 +786,272 @@ export const MOCK: Itinerario[] = [
     avaliacao: 10,
     likect: 4,
     rate_it: 6
+  },
+  {
+    id: 7,
+    atividades: [
+      {
+        conteudo: "Prainha",
+        hora: "7h00",
+        done: false,
+        dicas: [
+          {
+            conteudo: "Vista uma roupa adquada para trilhas",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Levar dinheiro vivo",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Levar roupa de banho",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Ótima para surf",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Experimentar o chá mate",
+            usuario: this.usuario
+          },
+          {
+            conteudo:
+              "Não levar materiais de valor alto, pois há casos de assalto nas trilhas.",
+            usuario: this.usuario
+          }
+        ]
+      },
+      {
+        conteudo: "Arruda com Cachoeira da Usina",
+        hora: "10h00",
+        done: false,
+        dicas: [
+          {
+            conteudo: "Vista uma roupa adquada para trilhas",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Levar água",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Levar roupa de banho",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Levar câmera fotográfica",
+            usuario: this.usuario
+          }
+        ]
+      },
+      {
+        conteudo: "Península de Maraú",
+        hora: "14h00",
+        done: false,
+        dicas: [
+          {
+            conteudo: "Esteja preparado para uma viagem de 2 horas",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Levar água",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Mergulhar nas piscinas de Taipú de Fora",
+            usuario: this.usuario
+          }
+        ]
+      },
+      {
+        conteudo: "Praia de Taipu de Dentro ",
+        hora: "15h00",
+        done: false,
+        dicas: [
+          {
+            conteudo: "Levar água",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Levar dinheiro vivo",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Desfrute de restaurantes e quiosques à beira-mar",
+            usuario: this.usuario
+          }
+        ]
+      },
+      {
+        conteudo: "Passear pela avenida principal",
+        hora: "18h00",
+        done: false,
+        dicas: [
+          {
+            conteudo: "Levar dinheiro",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Vista uma roupa confortável e noturna",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Aproveita a grande variedade de artesanatos",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Aproveite os bares e restaurantes",
+            usuario: this.usuario
+          }
+        ]
+      }
+    ],
+    local: {
+      local: "Itacaré - Bahia, Brasil",
+      lat: -14.2790654,
+      lon: -38.994629
+    },
+    usuario: {
+      nome: "Thaynara Nascimento Mendes",
+      email: "thaycic@hotmail.com"
+    },
+    descricao:
+      "Itinerário para conhecer uma das melhores cidades do estado da Bahia, experimentar o surf, as piscinas naturais e sua noite calorosa cheia de bares e restaurantes de qualidade",
+    nome: "Itinerario Itacaré",
+    avaliacao: 18,
+    likect: 11,
+    rate_it: 5
+  },
+  {
+    id: 8,
+    atividades: [
+      {
+        conteudo: "Mini Mundo",
+        hora: "9h00",
+        done: false,
+        dicas: [
+          {
+            conteudo: "Procure não se atrasar, a partir das 10horas fica lotado",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Levar dinheiro vivo",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Vista uma roupa confortável",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Leve camera fotográfica",
+            usuario: this.usuario
+          }
+        ]
+      },
+      {
+        conteudo: "Lago Negro",
+        hora: "13h00",
+        done: false,
+        dicas: [
+          {
+            conteudo: "Vista uma roupa adquada para trilhas",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Levar dinheiro",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Levar câmera fotográfica",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Levar água",
+            usuario: this.usuario
+          }
+        ]
+      },
+      {
+        conteudo: "Rua Torta",
+        hora: "16h00",
+        done: false,
+        dicas: [
+          {
+            conteudo: "Levar dinheiro",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Vista uma roupa confortável",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Aproveita a beleza das tortuosas ruas",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Levar água",
+            usuario: this.usuario
+          }
+        ]
+      },
+      {
+        conteudo: "Dreamland Museu de Cera",
+        hora: "18h00",
+        done: false,
+        dicas: [
+          {
+            conteudo: "Levar água",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Levar dinheiro vivo",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Levar câmera fotográfica",
+            usuario: this.usuario
+          }
+        ]
+      },
+      {
+        conteudo: "Palácio dos Festivais",
+        hora: "20h00",
+        done: false,
+        dicas: [
+          {
+            conteudo: "Levar dinheiro",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Reservar lugares",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Aproveite a grande variedade de filmes",
+            usuario: this.usuario
+          },
+          {
+            conteudo: "Vista uma roupa confortável e noturna",
+            usuario: this.usuario
+          }
+        ]
+      }
+    ],
+    local: {
+      local: "Gramado, Rio Grande do Sul, Brasil",
+      lat: -29.3745686,
+      lon: -50.876435
+    },
+    usuario: {
+      nome: "Thaynara Nascimento Mendes",
+      email: "thaycic@hotmail.com"
+    },
+    descricao:
+      "Itinerário para aproveitar uma das cidades mais lindas do Brasil, aproveitando de toda sua beleza nas ruas, parques e ambientes naturais",
+    nome: "Itinerario Gramado",
+    avaliacao: 18,
+    likect: 11,
+    rate_it: 4
   }
 ];

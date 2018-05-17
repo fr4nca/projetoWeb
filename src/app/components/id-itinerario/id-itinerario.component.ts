@@ -83,9 +83,6 @@ export class IdItinerarioComponent implements OnInit {
     this.itinerario.avaliacao += 1;
     this.itinerarioService.updateItis(this.itinerarios);
     this.rating_porcent();
-    console.log("Entrei no like " + this.itinerario.likect);
-    console.log("CtAvaliação " + this.itinerario.avaliacao);
-    console.log("Porcentagem " + this.porcent);
   }
 
   dislike() {
@@ -93,9 +90,6 @@ export class IdItinerarioComponent implements OnInit {
     this.itinerario.avaliacao += 1;
     this.itinerarioService.updateItis(this.itinerarios);
     this.rating_porcent();
-    console.log("Entrei no dislike " + this.itinerario.likect);
-    console.log("CtAvaliação " + this.itinerario.avaliacao);
-    console.log("Porcentagem " + this.porcent);
   }
 
   done(ativ) {
