@@ -25,9 +25,9 @@
                             </small>
                         </div>
                         <div class="form-group">
-                        <label for="foto">Foto:</label>
-                        <input type="file" class="form-control form-control-sm">
-                    </div>
+                            <label for="foto">Foto:</label>
+                            <input type="file" class="form-control form-control-sm">
+                        </div>
                     </form>
                 </div>
             </div>
@@ -40,39 +40,63 @@
         <div class="col-md-4">
             <div class="card shadow border-dark">
                 <h3 class="card-header">
-                    <span class="badge badge-pill badge-dark">3</span> Atividades</h3>
+                    <span class="badge badge-pill badge-dark">3</span> Dias: </h3>
                 <div class="card-body card-text">
-                    <form>
-                        <div class="form-row">
-                            <div class="form-group col-md-12">
-                                <label for="atividade">Escreva a atividade: </label>
-                                <input [(ngModel)]="aConteudo" type="text" class="form-control form-control-sm" name="atividade">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="hora">Hora:</label>
-                                <input [(ngModel)]="aHora" name="hora" type="time" class="form-control form-control-sm">
-                            </div>
+                    <div class="card shadow border-dark">
+                        <h5 class="card-header">
+                            Dia:</h5>
+                        <div class="card-body card-text">
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <my-date-picker name="mydate" [options]="datePickerOptions" [(ngModel)]="dData" required></my-date-picker>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                    </form>
+                    </div>
+                    <div class=" mt-3 card shadow border-dark">
+                        <h5 class="card-header">
+                            Atividades</h5>
+                        <div class="card-body card-text">
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="atividade">Escreva a atividade: </label>
+                                        <input [(ngModel)]="aConteudo" type="text" class="form-control form-control-sm" name="atividade">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="hora">Hora:</label>
+                                        <input [(ngModel)]="aHora" name="hora" type="time" class="form-control form-control-sm">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <button class="btn btn-dark btn-sm" (click)="addAtividade()">Adicionar atividade</button>
+                    </div>
+
+
+                    <div class=" card shadow border-dark mt-3">
+                        <h3 class="card-header">
+                            Dicas</h3>
+                        <div class="card-body card-text">
+                            <form>
+                                <div class="form-group">
+                                    <label for="dica">Escreva a dica: </label>
+                                    <textarea [(ngModel)]="dConteudo" type="text" class="form-control form-control-sm" id="dica" name="dica"></textarea>
+                                </div>
+                            </form>
+                        </div>
+                        <button class="btn btn-dark btn-sm" (click)="addDicas()">Adicionar dica</button>
+                    </div>
+
                 </div>
-                <button class="btn btn-dark btn-sm" (click)="addAtividade()">Adicionar atividade</button>
+                <button class="btn btn-dark btn-sm" (click)="addDia()">Adicionar dia</button>
+
             </div>
             <div class=" card shadow border-dark mt-3">
                 <h3 class="card-header">
-                    <span class="badge badge-pill badge-dark">4</span> Dicas</h3>
-                <div class="card-body card-text">
-                    <form>
-                        <div class="form-group">
-                            <label for="dica">Escreva a dica: </label>
-                            <textarea [(ngModel)]="dConteudo" type="text" class="form-control form-control-sm" id="dica" name="dica"></textarea>
-                        </div>
-                    </form>
-                </div>
-                <button class="btn btn-dark btn-sm" (click)="addDicas()">Adicionar dica</button>
-            </div>
-            <div class=" card shadow border-dark mt-3">
-                <h3 class="card-header">
-                    <span class="badge badge-pill badge-dark">5</span> Descrição</h3>
+                    <span class="badge badge-pill badge-dark">4</span> Descrição</h3>
                 <div class="card-body card-text">
                     <form>
                         <div class="form-group">

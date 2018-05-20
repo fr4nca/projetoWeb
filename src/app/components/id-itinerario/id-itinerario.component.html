@@ -35,9 +35,16 @@
               </div>
             </div>
             <div class="card-body mb-3">
-              <h3 class="card-title">Atividades</h3>
-              <ul class="list-group">
-                <li class="list-group-item" *ngFor="let ativ of this.itinerario.atividades" [ngStyle]="{'background-color': selecionado(ativ)}"
+              <h3 class="card-title">Atividades
+                <span *ngIf="this.selectedDia" class="float-right">{{this.selectedDia.data}}</span>
+              </h3>
+              <ul class="nav nav-tabs">
+                <li *ngFor="let dia of this.itinerario.dias" class="nav-item">
+                  <a (click)="selectDia(dia)" class="nav-link" role="tab" [ngClass]="{'active': this.selectedDia == dia}">Dia {{dia.dia}}</a>
+                </li>
+              </ul>
+              <ul *ngIf="this.selectedDia" class="list-group">
+                <li class="list-group-item" *ngFor="let ativ of this.selectedDia.atividades" [ngStyle]="{'background-color': selecionado(ativ)}"
                   (click)="setIti(ativ)" (click)="onSelect(ativ)">
                   <i *ngIf="ativ.done" (click)="done(ativ)" class="fa fa-check-square"></i>
                   <i *ngIf="!ativ.done" (click)="done(ativ)" class="fa fa-square"></i>

@@ -19,6 +19,7 @@ export class IdItinerarioComponent implements OnInit {
   porcent = 0;
   itiLocal;
   atividade;
+  selectedDia = undefined;
 
   constructor(
     private itinerarioService: ItinerarioService,
@@ -75,6 +76,10 @@ export class IdItinerarioComponent implements OnInit {
 
     this.itinerario.rate_it = this.rate;
     this.itinerarioService.updateItis(this.itinerarios);
+  }
+
+  selectDia(dia) {
+    this.selectedDia = dia;
   }
 
   like() {

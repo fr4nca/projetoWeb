@@ -1,30 +1,29 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { AgmCoreModule } from '@agm/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { AgmCoreModule } from "@agm/core";
 import { BarRatingModule } from "ngx-bar-rating";
+import { MyDatePickerModule } from "mydatepicker";
 
-
-import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { IndexComponent } from './components/index/index.component';
-import { CriarItiComponent } from './components/criar-iti/criar-iti.component';
-import { ItinerarioService } from './services/itinerario.service';
-import { ItinerarioComponent } from './components/itinerario/itinerario.component';
-import { IdItinerarioComponent } from './components/id-itinerario/id-itinerario.component';
-import { InserirDicasComponent } from './components/inserir-dicas/inserir-dicas.component'
-import { MapaComponent } from './components/mapa/mapa.component';
-import { CarditiComponent } from './components/carditi/carditi.component'
-
+import { RouterModule, Routes } from "@angular/router";
+import { AppComponent } from "./app.component";
+import { NavbarComponent } from "./components/navbar/navbar.component";
+import { IndexComponent } from "./components/index/index.component";
+import { CriarItiComponent } from "./components/criar-iti/criar-iti.component";
+import { ItinerarioService } from "./services/itinerario.service";
+import { ItinerarioComponent } from "./components/itinerario/itinerario.component";
+import { IdItinerarioComponent } from "./components/id-itinerario/id-itinerario.component";
+import { InserirDicasComponent } from "./components/inserir-dicas/inserir-dicas.component";
+import { MapaComponent } from "./components/mapa/mapa.component";
+import { CarditiComponent } from "./components/carditi/carditi.component";
 
 const appRoutes: Routes = [
-  { path: 'itinerario/:id', component: IdItinerarioComponent },
-  { path: 'itinerario', component: ItinerarioComponent },
-  { path: 'criar', component: CriarItiComponent },
-  { path: '', component: IndexComponent },
-  { path: 'mapa', component: MapaComponent }
-]
+  { path: "itinerario/:id", component: IdItinerarioComponent },
+  { path: "itinerario", component: ItinerarioComponent },
+  { path: "criar", component: CriarItiComponent },
+  { path: "", component: IndexComponent },
+  { path: "mapa", component: MapaComponent }
+];
 
 @NgModule({
   declarations: [
@@ -37,7 +36,6 @@ const appRoutes: Routes = [
     InserirDicasComponent,
     MapaComponent,
     CarditiComponent
-
   ],
   imports: [
     BarRatingModule,
@@ -48,9 +46,10 @@ const appRoutes: Routes = [
     }),
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    MyDatePickerModule
   ],
   providers: [ItinerarioService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
