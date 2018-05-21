@@ -1,15 +1,15 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { Itinerario } from "../../models/Itinerario";
 import { MapaComponent } from "../mapa/mapa.component";
-import { User } from "../../models/User";
-import { Local } from "../../models/Local";
-import { Atividade } from "../../models/Atividade";
-import { Dia } from "../../models/Dia";
+import { IMyDpOptions } from "mydatepicker";
+import { ItinerarioService } from "../../services/itinerario.service";
 
 import { Dica } from "../../models/Dica";
-import { ItinerarioService } from "../../services/itinerario.service";
-import { IMyDpOptions } from "mydatepicker";
+import { User } from "../../models/User";
+import { Local } from "../../models/Local";
+import { Itinerario } from "../../models/Itinerario";
+import { Atividade } from "../../models/Atividade";
+import { Dia } from "../../models/Dia";
 
 @Component({
   selector: "app-criar-iti",
@@ -31,6 +31,7 @@ export class CriarItiComponent implements OnInit {
   @ViewChild(MapaComponent) alecrim: MapaComponent;
 
   dData;
+  selectedDia;
   iDia;
   aConteudo;
   aHora;
@@ -62,6 +63,10 @@ export class CriarItiComponent implements OnInit {
 
   ngOnInit() {}
 
+  selectDia(dia) {
+    this.selectedDia = dia;
+  }
+
   selectId() {
     let idd = 1;
     this.itinerarioss.forEach(iti => {
@@ -78,6 +83,8 @@ export class CriarItiComponent implements OnInit {
     };
     this.atividades = [];
     this.dicas = [];
+    this.dData = null;
+    this.selectedDia = this.iDia;
     this.dias.push(this.iDia);
   }
 
@@ -117,6 +124,16 @@ export class CriarItiComponent implements OnInit {
     }
   }
 
+  concluirDia() {
+    this.atividades = [];
+    this.dicas = [];
+    this.aConteudo = "";
+    this.aHora = "";
+    this.dConteudo = "";
+    this.dData = null;
+    this.selectedDia = null;
+  }
+
   setIti(ati) {
     this.atividade = ati;
   }
@@ -137,7 +154,7 @@ export class CriarItiComponent implements OnInit {
         done: false,
         dicas: []
       };
-      this.atividades.push(this.atividade);
+      this.selectedDia.atividades.push(this.atividade);
     } else {
       alert("Digite a hora");
     }
