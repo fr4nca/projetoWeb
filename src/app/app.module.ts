@@ -2,10 +2,12 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AgmCoreModule } from "@agm/core";
+import { RouterModule, Routes } from "@angular/router";
+import { HttpClientModule } from "@angular/common/http";
+
 import { BarRatingModule } from "ngx-bar-rating";
 import { MyDatePickerModule } from "mydatepicker";
 
-import { RouterModule, Routes } from "@angular/router";
 import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { IndexComponent } from "./components/index/index.component";
@@ -39,6 +41,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BarRatingModule,
+    HttpClientModule,
     ReactiveFormsModule,
     AgmCoreModule.forRoot({
       apiKey: "AIzaSyDzBOpN38p3ULocMvu5ykvWsRDr-1LYHls",

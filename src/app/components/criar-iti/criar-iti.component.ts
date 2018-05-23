@@ -95,7 +95,8 @@ export class CriarItiComponent implements OnInit {
       this.local = {
         local: this.alecrim.local.formatted_address,
         lat: this.alecrim.latitude,
-        lon: this.alecrim.longitude
+        lon: this.alecrim.longitude,
+        id: this.alecrim.local.place_id
       };
 
       this.id = this.selectId();
@@ -116,8 +117,6 @@ export class CriarItiComponent implements OnInit {
         likect: 0,
         rate_it: 0
       };
-
-      console.log(this.iti);
 
       this.itinerarioService.addItinerario(this.iti);
       this.route.navigate(["/itinerario", this.id]);

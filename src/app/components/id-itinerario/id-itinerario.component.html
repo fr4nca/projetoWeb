@@ -61,6 +61,18 @@
       <div class=" mb-3 card card-body shadow">
         <app-mapa [itiLocal]="this.itinerario.local"></app-mapa>
       </div>
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row">
+            <div *ngFor="let foto of this.fotos" class=" col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" data-src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference={{foto}}&key=AIzaSyAdzUm2Fsuw76LOq3EU2_HPkJDBwTXHuTc"
+                  alt="Card image cap">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

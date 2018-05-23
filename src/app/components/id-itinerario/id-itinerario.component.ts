@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { RouterModule, Routes, ActivatedRoute } from "@angular/router";
+import { HttpClient } from "@angular/common/http";
 import { ItinerarioService } from "../../services/itinerario.service";
 import { Itinerario } from "../../models/Itinerario";
 import { Atividade } from "../../models/Atividade";
@@ -20,10 +21,13 @@ export class IdItinerarioComponent implements OnInit {
   itiLocal;
   atividade;
   selectedDia = undefined;
+  photos;
+  fotos = [];
 
   constructor(
     private itinerarioService: ItinerarioService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private http: HttpClient
   ) {
     this.id = this.route.snapshot.params.id;
     this.itinerarioService
@@ -34,6 +38,7 @@ export class IdItinerarioComponent implements OnInit {
         this.itinerario = iti;
       }
     });
+    this.getPhotos();
     this.rate = this.itinerario.rate_it;
   }
 
@@ -58,6 +63,17 @@ export class IdItinerarioComponent implements OnInit {
 
   onSelect(A) {
     this.selectAtividade = A;
+  }
+
+  getPhotos() {
+    this.http
+      .get(`http://localhost:3000/api/photos/${this.itinerario.local.id}`)
+      .subscribe(data => {
+        this.photos = data;
+        this.photos.forEach(photo => {
+          this.fotos.push(photo.photo_reference);
+        });
+      });
   }
 
   rating_porcent() {

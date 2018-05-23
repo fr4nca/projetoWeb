@@ -1,5 +1,6 @@
 export interface Local {
-    local: string,
-    lat,
-    lon 
+  local: string;
+  lat;
+  lon;
+  id?;
 }
