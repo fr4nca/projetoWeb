@@ -70,9 +70,7 @@ export class IdItinerarioComponent implements OnInit {
       .get(`http://localhost:3000/api/photos/${this.itinerario.local.id}`)
       .subscribe(data => {
         this.photos = data;
-        this.photos.forEach(photo => {
-          this.fotos.push(photo.photo_reference);
-        });
+        this.fotos = this.photos.map(photo => photo.photo_reference);
       });
   }
 
