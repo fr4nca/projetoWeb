@@ -2,33 +2,35 @@ import { Injectable } from "@angular/core";
 import { Itinerario } from "../models/Itinerario";
 import { Observable } from "rxjs/Observable";
 import { of } from "rxjs/observable/of";
-import { MOCK } from "../mock";
+import { HttpClient } from "@angular/common/http";
 
 @Injectable()
 export class ItinerarioService {
   itinerarios: Itinerario[];
 
-  constructor() {
+  constructor(private http: HttpClient) {
     this.getItinerarios().subscribe(iti => {
       this.itinerarios = iti;
     });
   }
 
-  updateItis(itis: Itinerario[]) {
-    localStorage.setItem("itinerarios", JSON.stringify(itis));
+  updateIti(iti: Itinerario) {
+    return this.http.post("http://localhost:3000/api/itinerario/update", iti);
   }
 
   addItinerario(iti: Itinerario) {
-    this.itinerarios.push(iti);
-    localStorage.setItem("itinerarios", JSON.stringify(this.itinerarios));
+    return this.http.post("http://localhost:3000/api/itinerario/add", iti);
   }
 
-  getItinerarios(): Observable<Itinerario[]> {
-    if (localStorage.getItem("itinerarios") === null) {
-      this.itinerarios = MOCK;
-    } else {
-      this.itinerarios = JSON.parse(localStorage.getItem("itinerarios"));
-    }
-    return of(this.itinerarios);
+  getItinerario(id): Observable<any> {
+    return this.http.get(`http://localhost:3000/api/itinerario/${id}`);
+  }
+
+  getItinerarios(): Observable<any> {
+    return this.http.get("http://localhost:3000/api/itinerarios");
+  }
+
+  getPhotos(id): Observable<any> {
+    return this.http.get(`http://localhost:3000/api/photos/${id}`);
   }
 }

@@ -99,27 +99,26 @@ export class CriarItiComponent implements OnInit {
         id: this.alecrim.local.place_id
       };
 
-      this.id = this.selectId();
-
       this.usuario = {
         nome: this.uNome,
         email: this.uEmail
       };
 
       this.iti = {
+        comentarios: [],
         dias: this.dias,
         usuario: this.usuario,
         descricao: this.iDescricao,
         nome: this.iNome,
-        id: this.id,
         local: this.local,
         avaliacao: 0,
         likect: 0,
         rate_it: 0
       };
 
-      this.itinerarioService.addItinerario(this.iti);
-      this.route.navigate(["/itinerario", this.id]);
+      this.itinerarioService.addItinerario(this.iti).subscribe(data => {
+        this.route.navigate(["/itinerario", data]);
+      });
     }
   }
 

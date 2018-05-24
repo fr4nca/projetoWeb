@@ -28,21 +28,29 @@ export class IdItinerarioComponent implements OnInit {
     private itinerarioService: ItinerarioService,
     private route: ActivatedRoute,
     private http: HttpClient
-  ) {
+  ) {}
+
+  ngOnInit() {
     this.id = this.route.snapshot.params.id;
-    this.itinerarioService
-      .getItinerarios()
-      .subscribe(iti => (this.itinerarios = iti));
-    this.itinerarios.forEach(iti => {
-      if (iti.id == this.id) {
-        this.itinerario = iti;
-      }
-    });
-    this.getPhotos();
-    this.rate = this.itinerario.rate_it;
+    this.getIti();
   }
 
-  ngOnInit() {}
+  getIti() {
+    this.itinerarioService.getItinerario(this.id).subscribe(iti => {
+      this.itinerario = iti;
+      this.getPhotos();
+      this.rate = this.itinerario.rate_it;
+    });
+  }
+
+  getPhotos() {
+    this.itinerarioService
+      .getPhotos(this.itinerario.local.id)
+      .subscribe(data => {
+        this.photos = data;
+        this.fotos = this.photos.map(photo => photo.photo_reference);
+      });
+  }
 
   setIti(ati) {
     this.atividade = ati;
@@ -58,20 +66,11 @@ export class IdItinerarioComponent implements OnInit {
 
   onNewAtividade(ativ) {
     this.selectAtividade = ativ;
-    this.itinerarioService.updateItis(this.itinerarios);
+    this.itinerarioService.updateIti(this.itinerario).subscribe(data => data);
   }
 
   onSelect(A) {
     this.selectAtividade = A;
-  }
-
-  getPhotos() {
-    this.http
-      .get(`http://localhost:3000/api/photos/${this.itinerario.local.id}`)
-      .subscribe(data => {
-        this.photos = data;
-        this.fotos = this.photos.map(photo => photo.photo_reference);
-      });
   }
 
   rating_porcent() {
@@ -89,7 +88,7 @@ export class IdItinerarioComponent implements OnInit {
     }
 
     this.itinerario.rate_it = this.rate;
-    this.itinerarioService.updateItis(this.itinerarios);
+    this.itinerarioService.updateIti(this.itinerario).subscribe(data => data);
   }
 
   selectDia(dia) {
@@ -100,19 +99,21 @@ export class IdItinerarioComponent implements OnInit {
     this.vclick = true;
     this.itinerario.likect += 1;
     this.itinerario.avaliacao += 1;
-    this.itinerarioService.updateItis(this.itinerarios);
+    this.itinerarioService.updateIti(this.itinerario).subscribe(data => data);
+
     this.rating_porcent();
   }
 
   dislike() {
     this.vclick = true;
     this.itinerario.avaliacao += 1;
-    this.itinerarioService.updateItis(this.itinerarios);
+    this.itinerarioService.updateIti(this.itinerario).subscribe(data => data);
+
     this.rating_porcent();
   }
 
   done(ativ) {
     ativ.done = !ativ.done;
-    this.itinerarioService.updateItis(this.itinerarios);
+    this.itinerarioService.updateIti(this.itinerario).subscribe(data => data);
   }
 }
