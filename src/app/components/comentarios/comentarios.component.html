@@ -1,0 +1,20 @@
+<div  class="alert shadow-lg p-3 mb-5 mt-3 bg-white rounded border border-info">
+  <button type="button" class="close text-danger" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button>
+    <div class="font-weight-light text-center">Adicione um comentário!</div>
+    <div class="card-body">
+      <form>
+        <div class="form-group">
+          <label class="font-weight-light" for="dica">Seu nome: </label>
+          <input type="text" class="form-control form-control-sm" [(ngModel)]="nUsuario" name="nomeUsuarioo">
+          <label class="font-weight-light" for="dica">Comentário: </label>
+          <textarea type="text" class="form-control form-control-sm" [(ngModel)]="descricao" name="descricaoComent"></textarea>
+        </div>
+          <div *ngIf="getAlert()">
+            <button class="btn btn btn-info" disabled>Adicionar Comentário</button>
+          </div>
+          <div *ngIf="!getAlert()">
+            <button class="btn btn btn-info" data-dismiss="alert" aria-label="Close" (click)="addComentario()"> Adicionar Comentário</button>
+          </div>
+      </form>
+    </div>
+</div>

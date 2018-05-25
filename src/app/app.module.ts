@@ -19,6 +19,7 @@ import { IdItinerarioComponent } from "./components/id-itinerario/id-itinerario.
 import { InserirDicasComponent } from "./components/inserir-dicas/inserir-dicas.component";
 import { MapaComponent } from "./components/mapa/mapa.component";
 import { CarditiComponent } from "./components/carditi/carditi.component";
+import { ComentariosComponent } from './components/comentarios/comentarios.component';
 
 const appRoutes: Routes = [
   { path: "itinerario/:id", component: IdItinerarioComponent },
@@ -38,7 +39,8 @@ const appRoutes: Routes = [
     IdItinerarioComponent,
     InserirDicasComponent,
     MapaComponent,
-    CarditiComponent
+    CarditiComponent,
+    ComentariosComponent
   ],
   imports: [
     BarRatingModule,
