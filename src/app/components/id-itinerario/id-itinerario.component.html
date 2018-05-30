@@ -79,10 +79,14 @@
     </div>
     <div class="card card-body shadow ">
         <h3 class="card-title">Comentários</h3>
-        <div class="card border-secondary" *ngFor="let coment of itinerario.comentarios">
-          <h6 class=" shadow-none bg-light rounded mb-1 font-italic font-weight-bold"> {{coment.usuario.nome}}:</h6>
-          <p class="p-3 text-monospace ">{{coment.comentario}}</p>
+        <div class="card border-secondary" >
+          <div *ngFor="let coment of itinerario.comentarios">
+          <h6 class=" shadow-none bg-info rounded mb-1 font-italic font-weight-bold">
+              <i class="fa fa-user-circle"></i>{{coment.usuario.nome}}:</h6>
+          <p class="p-3 font-weight-light ">{{coment.comentario}}</p>
          </div>
+       </div>
+
     </div>
   </div>
 </div>
