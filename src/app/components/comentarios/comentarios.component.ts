@@ -12,40 +12,26 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ['./comentarios.component.css']
 })
 export class ComentariosComponent implements OnInit {
-  id
-  @Input() vcoment
+  @Input() itinerario
   nUsuario: string
   descricao: string
   coment: Comentario
-  usuario: User;
+  usuario: User;vcoment
   vAlert = false;
-  itinerario: Itinerario;
 
   constructor(
-    private itinerarioService: ItinerarioService,
-    private route: ActivatedRoute,
-    private http: HttpClient
+    private itinerarioService: ItinerarioService
   ) { }
 
   ngOnInit() {
-    this.id = this.route.snapshot.params.id;
-    this.getIti();
-  }
-
-  getIti() {
-    this.itinerarioService.getItinerario(this.id).subscribe(iti => {
-      this.itinerario = iti;
-      this.vcoment = this.itinerario.comentarios;
-    });
   }
 
   addComentario(){
-        console.log(this.vcoment)
         this.coment = {
           comentario: this.descricao,
           usuario: {nome: this.nUsuario, email: ""}
         };
-        this.vcoment.push(this.coment);
+        this.itinerario.comentarios.push(this.coment);
         this.itinerarioService.updateIti(this.itinerario).subscribe(data => data);
   }
 
