@@ -15,22 +15,22 @@ export class ItinerarioService {
   }
 
   updateIti(iti: Itinerario) {
-    return this.http.post("http://localhost:3000/api/itinerario/update", iti);
+    return this.http.post("/api/itinerario/update", iti);
   }
 
   addItinerario(iti: Itinerario) {
-    return this.http.post("http://localhost:3000/api/itinerario/add", iti);
+    return this.http.post("/api/itinerario/add", iti);
   }
 
   getItinerario(id): Observable<any> {
-    return this.http.get(`http://localhost:3000/api/itinerario/${id}`);
+    return this.http.get(`/api/itinerario/${id}`);
   }
 
   getItinerarios(): Observable<any> {
-    return this.http.get("http://localhost:3000/api/itinerarios");
+    return this.http.get("/api/itinerarios");
   }
 
   getPhotos(id): Observable<any> {
-    return this.http.get(`http://localhost:3000/api/photos/${id}`);
+    return this.http.get(`/api/photos/${id}`);
   }
 }
