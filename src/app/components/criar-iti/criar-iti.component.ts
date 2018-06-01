@@ -65,14 +65,7 @@ export class CriarItiComponent implements OnInit {
 
   selectDia(dia) {
     this.selectedDia = dia;
-  }
-
-  selectId() {
-    let idd = 1;
-    this.itinerarioss.forEach(iti => {
-      idd++;
-    });
-    return idd;
+    this.atividade = this.selectedDia.atividades[0];
   }
 
   addDia() {
