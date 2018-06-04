@@ -1,0 +1,13 @@
+<h2>Pesquisar: </h2>
+<form class="form-inline my-2 my-lg-0">
+  <input [(ngModel)]="cidade" name="cidade" class="form-control col-md-6" type="search" placeholder="Digite a cidade">
+  <button class="btn btn-sm btn btn-outline-dar" type="submit" (click)="pesquisarCidade(cidade)"> <i class="fa fa-search"></i> </button>
+</form>
+<div class="container">
+  <div class="col d-flex">
+    <div class="card-deck mt-3">
+        <app-carditi *ngFor="let itin of pItinerario"  [itinerario]="itin"></app-carditi>
+        <h4 *ngIf="this.alerim">Não há itinerários cadastrados para esta pesquisa.</h4>
+    </div>
+  </div>
+</div>
