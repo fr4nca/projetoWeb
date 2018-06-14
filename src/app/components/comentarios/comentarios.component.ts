@@ -16,7 +16,7 @@ export class ComentariosComponent implements OnInit {
   nUsuario: string
   descricao: string
   coment: Comentario
-  usuario: User;vcoment
+  usuario: User;
   vAlert = false;
 
   constructor(
