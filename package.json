@@ -32,7 +32,7 @@
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "bootstrap": "^4.1.1",
-    "nodejs": "10.4.0",
+    "nodejs": "8.11.3",
     "circular-json": "^0.5.4",
     "concurrently": "^3.5.1",
     "core-js": "^2.4.1",
