@@ -13,8 +13,8 @@ export class ItinerarioComponent implements OnInit {
   constructor(private itinerarioService: ItinerarioService) {}
 
   ngOnInit() {
-    this.itinerarioService
-      .getItinerarios()
-      .subscribe(iti => (this.itinerarios = iti));
+    this.itinerarioService.getItinerarios().subscribe(iti => {
+      this.itinerarios = iti.sort((a,b) => b.rate_it - a.rate_it);
+    });
   }
 }

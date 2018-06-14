@@ -20,6 +20,7 @@ import { MapaComponent } from "./components/mapa/mapa.component";
 import { CarditiComponent } from "./components/carditi/carditi.component";
 import { ComentariosComponent } from "./components/comentarios/comentarios.component";
 import { PesqLocalComponent } from "./components/pesq-local/pesq-local.component";
+import { EditComponent } from "./components/edit/edit.component";
 
 const appRoutes: Routes = [
   { path: "itinerario/:id", component: IdItinerarioComponent },
@@ -27,7 +28,8 @@ const appRoutes: Routes = [
   { path: "criar", component: CriarItiComponent },
   { path: "", component: IndexComponent },
   { path: "mapa", component: MapaComponent },
-  { path: "pesquisa", component: PesqLocalComponent }
+  { path: "pesquisa", component: PesqLocalComponent },
+  { path: "editar/:id", component: EditComponent}
 ];
 
 @NgModule({
@@ -42,7 +44,8 @@ const appRoutes: Routes = [
     MapaComponent,
     CarditiComponent,
     ComentariosComponent,
-    PesqLocalComponent
+    PesqLocalComponent,
+    EditComponent
   ],
   imports: [
     BarRatingModule,

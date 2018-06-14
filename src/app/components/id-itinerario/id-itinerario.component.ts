@@ -12,6 +12,7 @@ import { Atividade } from "../../models/Atividade";
 })
 export class IdItinerarioComponent implements OnInit {
   id;
+  x;
   itinerarios: Itinerario[] = [];
   itinerario: Itinerario;
   selectAtividade;
@@ -34,6 +35,13 @@ export class IdItinerarioComponent implements OnInit {
     this.id = this.route.snapshot.params.id;
     this.getIti();
   }
+
+  getVar(){
+    this.x = this.route.snapshot.params.id;
+    return this.x;
+    //console.log("getVar: "+ this.x);
+  }
+
 
   getIti() {
     this.itinerarioService.getItinerario(this.id).subscribe(iti => {

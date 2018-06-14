@@ -1,0 +1,99 @@
+
+<div *ngIf="this.itinerario" class="mb-3">
+    <div class="row mb-4 justify-content-center">
+      <div class="col-md-4">
+          <div class="card border-dark shadow mb-4">
+              <h3 class=" card-header mb-3">
+                  <span class="badge badge-pill badge-dark">1</span> Informações</h3>
+              <div class="card-body card-text mb-4">
+                  <form>
+                      <div class="form-group">
+                          <label for="nome">Nome do itinerário: </label>
+                          <small>
+                              <input [(ngModel)]="iNome" class=" form-control form-control-sm" type="text" name="nome" id="nome">
+                          </small>
+                      </div>
+                      <div class="form-group">
+                          <label for="name">Nome: </label>
+                          <small>
+                              <input [(ngModel)]="uNome" class=" form-control form-control-sm" type="text" name="name" id="name">
+                          </small>
+                      </div>
+                      <div class="form-group">
+                          <label for="email">Email: </label>
+                          <small>
+                              <input [(ngModel)]="uEmail" class=" form-control form-control-sm" type="text" name="email" id="email">
+                          </small>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+        <div class="col-md-4">
+            <div class="card shadow border-dark">
+                <h3 class="card-header">
+                    <span class="badge badge-pill badge-dark">2</span> Dias: </h3>
+                <div class="card-body card-text">
+                    <div *ngIf="!this.selectedDia" class="card shadow border-dark">
+                        <h5 class="card-header">
+                            Dia:</h5>
+                        <div class="card-body card-text">
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <my-date-picker name="mydate" [options]="datePickerOptions" [(ngModel)]="dData" required></my-date-picker>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div *ngIf="this.selectedDia" class=" mt-3 card shadow border-dark">
+                        <h5 class="card-header">
+                            Atividades</h5>
+                        <div class="card-body card-text">
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="atividade">Escreva a atividade: </label>
+                                        <input [(ngModel)]="aConteudo" type="text" class="form-control form-control-sm" name="atividade">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="hora">Hora:</label>
+                                        <input [(ngModel)]="aHora" name="hora" type="time" class="form-control form-control-sm">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <button class="btn btn-dark btn-sm" (click)="addAtividade()">Adicionar atividade</button>
+                    </div>
+                </div>
+                <button *ngIf="this.selectedDia" class="btn btn-dark btn-sm mt-3" (click)="concluirDia()">Concluir dia</button>
+                <button *ngIf="this.selectedDia" class="btn btn-dark btn-sm" (click)="this.selectedDia = undefined">Voltar</button>
+                <button *ngIf="!this.selectedDia" class="btn btn-dark btn-sm" (click)="addDia()">Adicionar dia</button>
+            </div>
+        </div>
+    </div>
+        <!--Itinerario-->
+    <div class="card shadow border-dark">
+        <div class="card-body mb-3">
+          <h3 class="card-title">Itinerario
+            <span *ngIf="this.selectedDia" class="float-right">{{this.selectedDia.data}}</span>
+          </h3>
+          <ul class="nav nav-tabs">
+            <li *ngFor="let dia of this.itinerario.dias" class="nav-item">
+              <a (click)="selectDia(dia)" class="nav-link" role="tab" [ngClass]="{'active': this.selectedDia == dia}">Dia {{dia.dia}}</a>
+            </li>
+          </ul>
+          <ul *ngIf="this.selectedDia" class="list-group">
+            <li class="list-group-item" *ngFor="let ativ of this.selectedDia.atividades" [ngStyle]="{'background-color': selecionado(ativ)}"
+              (click)="setIti(ativ)" (click)="onSelect(ativ)">
+              <i *ngIf="ativ.done" (click)="done(ativ)" class="fa fa-check-square"></i>
+              <i *ngIf="!ativ.done" (click)="done(ativ)" class="fa fa-square"></i>
+              {{ativ.hora}} -> {{ativ.conteudo}}
+            </li>
+          </ul>
+        </div>
+        <button [routerLink]="['/itinerario', itinerario.id]" (click)="addItinerario()" (click)="addAtividade" class="btn btn-lg  btn-primary btn-dark mt-4">Concluir</button>
+   </div>
+
+</div>

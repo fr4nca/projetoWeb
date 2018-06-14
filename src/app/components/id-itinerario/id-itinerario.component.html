@@ -54,6 +54,9 @@
                   {{ativ.hora}} -> {{ativ.conteudo}}
                 </li>
               </ul>
+              <div class="botaoEd">
+                <button (click)="getVar()" [routerLink]="['/editar', itinerario.id]" type="button" class="btn btn-primary">Editar</button>
+              </div>
             </div>
           </div>
         </div>
